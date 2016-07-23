@@ -641,16 +641,33 @@ a:after {
 ==================================*/
 
 #summary {
-    padding-top: 4px;
+    margin-top: 50px;
 }
 
-li {
-	padding-top: 10px;
+@media (max-width: 992px) {
+	#summary {
+    	margin-top: 0px;
+	}
 }
 
 #home {
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 20px;
+}
+
+#headerName {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+#headerTitle {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+#headerEmail {
+  font-size: 18px;
+  font-weight: 300;
 }
 
 #publications {
@@ -659,6 +676,10 @@ li {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #ddd;
+}
+
+li {
+	padding-top: 10px;
 }
 
 #education {
