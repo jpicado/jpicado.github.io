@@ -1,0 +1,23 @@
+{
+  "algorithm": "FOIL",
+  "schema" : "4NF",
+  "accuracy": 0.94,
+  "precision": 0.72,
+  "recall": 0.91,
+  "f1": 0.80,
+  "time": 3340.565,
+  "definition": [
+    {
+    	"head": "hivActive(v0)",
+    	"body": [
+        "compounds(v0,v1)", "element_O(v1)", "bonds(v2,v1,v3,1,0,0)", "bonds(v4,v3,v5,0,1,0)", "element_O(v5)", "p2_1(v5)", "bonds(v6,v1,v7,1,0,0)", "element_C(v7)"
+      ]
+    },
+    {
+      "head": "hivActive(v0)",
+      "body": [
+        "compounds(v0,v1)", "bonds(v2,v1,v3,0,1,0)", "element_O(v3)", "bonds(v4,v1,v5,1,0,0)", "element_O(v5)", "bonds(v6,v5,v7,1,0,0)", "element_C(v7)", "bonds(v8,v7,v9,1,0,0)", "element_C(v9)"
+      ]
+    }
+  ]
+}
