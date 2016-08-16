@@ -157,7 +157,7 @@ function createGraphicalViewHIV(definitionJson, elementId, schema) {
 
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
 		  var target = $(e.target).attr("href") // activated tab
-		  if (target == "#graphicalTab") {
+		  if (target == "#compareTab" || target == "#datalogTab") {
 		  	graph.resize();	
 		  	graph.layout({
 		  		name: 'cose'
@@ -225,7 +225,8 @@ function createGraphicalViewHIVAuxSchema1(graph, seenTerms, definitionNumber, pr
         		graph.getElementById(termId).addClass(classForElement);
 
         		// Set label
-        		var label = predicate.replace("element_","").toUpperCase();
+        		//var label = predicate.replace("element_","").toUpperCase();
+        		var label = predicate;
         		graph.getElementById(termId).data("label", label);
         	}
 
@@ -314,7 +315,8 @@ function createGraphicalViewHIVAuxSchema2(graph, seenTerms, definitionNumber, pr
         		graph.getElementById(termId).addClass(classForElement);
 
         		// Set label
-        		var label = predicate.replace("element_","").toUpperCase();
+        		//var label = predicate.replace("element_","").toUpperCase();
+        		var label = predicate;
         		graph.getElementById(termId).data("label", label);
         	}
 

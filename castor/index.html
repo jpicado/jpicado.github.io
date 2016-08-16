@@ -92,15 +92,15 @@
               <!-- results -->
               <div id="resultsDiv" class="col-md-12">
                 <ul class="nav nav-tabs default-primary-color roundedTopCorners">
-                  <li class="active"><a data-toggle="tab" href="#statisticsTab">Statistics</a></li>
-                  <li><a data-toggle="tab" href="#datalogTab">Datalog</a></li>
-                  <li><a data-toggle="tab" href="#graphicalTab">Graphical</a></li>
+                  <li class="active"><a data-toggle="tab" href="#datalogTab">Definitions</a></li>
+                  <li><a data-toggle="tab" href="#statisticsTab">Effectiveness</a></li>
+                  <!--<li><a data-toggle="tab" href="#graphicalTab">Graphical</a></li>-->
                 </ul>
 
                 <div class="tab-content">
 
                   <!-- statistics -->
-                  <div id="statisticsTab" class="tab-pane fade in active">
+                  <div id="statisticsTab" class="tab-pane fade">
                     <table class="table table-hover table-bordered">
                       <thread>
                         <tr class="nohover-row">
@@ -144,7 +144,7 @@
                   <!-- /statistics -->
 
                   <!-- datalog -->
-                  <div id="datalogTab" class="tab-pane fade">
+                  <div id="datalogTab" class="tab-pane fade in active">
 
                     <!-- algorithm1 -->
                     
@@ -154,15 +154,17 @@
                       <div class="tabContent col-md-12">
                         <div class="col-md-6">
                           <h5 class="text-center" id="datalog-algorithm1-schema1-title"></h5>
-                          <div class="bordered roundedCorners">
+                          <div class="bordered roundedTopCorners col-md-12">
                             <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema1"></textarea>
                           </div>
+                          <div id="graphical-algorithm1-schema1" class="graphicalView roundedBottomCorners col-md-12"></div>
                         </div>
                         <div class="col-md-6">
                           <h5 class="text-center" id="datalog-algorithm1-schema2-title"></h5>
-                          <div class="bordered roundedCorners">
+                          <div class="bordered roundedTopCorners col-md-12">
                             <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema2"></textarea>
                           </div>
+                          <div id="graphical-algorithm1-schema2" class="graphicalView roundedBottomCorners col-md-12"></div>
                         </div>
                       </div>
 
@@ -175,65 +177,23 @@
                         <div class="tabContent roundedBottomCorners col-md-12">
                           <div class="col-md-6">
                             <h5 class="text-center" id="datalog-algorithm2-schema1-title"></h5>
-                            <div class="bordered roundedCorners">
+                            <div class="bordered roundedTopCorners col-md-12">
                               <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema1"></textarea>
                             </div>
+                            <div id="graphical-algorithm2-schema1" class="graphicalView roundedBottomCorners col-md-12"></div>
                           </div>
                           <div class="col-md-6">
                             <h5 class="text-center" id="datalog-algorithm2-schema2-title"></h5>
-                            <div class="bordered roundedCorners">
+                            <div class="bordered roundedTopCorners col-md-12">
                               <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema2"></textarea>
                             </div>
+                            <div id="graphical-algorithm2-schema2" class="graphicalView roundedBottomCorners col-md-12"></div>
                           </div>
                         </div>
                         <!-- /algorithm2 -->
 
                       </div>
                       <!-- /datalog -->
-
-                      <!-- graphical -->
-                      <div id="graphicalTab" class="tab-pane fade">
-
-                        <!-- algorithm1 -->
-                        <div class="col-md-12 light-primary-color">
-                          <div class="text-center"><h5 id="graphical-algorithm1"></h5></div>
-                        </div>
-                        <div class="tabContent col-md-12">
-                          <div class="col-md-6">
-                            <h5 class="text-center" id="graphical-algorithm1-schema1-title"></h5>
-                            <!--<img src="images/placeholder-definition.jpg">-->
-                            <div id="graphical-algorithm1-schema1" class="graphicalView roundedCorners"></div>
-                          </div>
-                          <div class="col-md-6">
-                            <h5 class="text-center" id="graphical-algorithm1-schema2-title"></h5>
-                            <div id="graphical-algorithm1-schema2" class="graphicalView roundedCorners"></div>
-                            <!--<img src="images/placeholder-definition.jpg">-->
-                          </div>
-                        </div>
-                        <!-- /algorithm1 -->
-
-                        <!-- algorithm2 -->
-                        <div class="col-md-12 light-primary-color">
-                          <div class="text-center"><h5 id="graphical-algorithm2"></h5></div>
-                        </div>
-                        <div class="tabContent roundedBottomCorners col-md-12">
-                          <div class="col-md-6">
-                            <h5 class="text-center" id="graphical-algorithm2-schema1-title"></h5>
-                            <!--<img src="images/placeholder-definition.jpg">-->
-                            <div id="graphical-algorithm2-schema1" class="graphicalView roundedCorners"></div>
-                          </div>
-                          <div class="col-md-6">
-                            <h5 class="text-center" id="graphical-algorithm2-schema2-title"></h5>
-                            <div id="graphical-algorithm2-schema2" class="graphicalView roundedCorners"></div>
-                            <!--<img src="images/placeholder-definition.jpg">-->
-                          </div>
-                        </div>
-                        <!-- /algorithm2 -->
-
-
-
-                      </div>
-                      <!-- /graphical -->
 
                     </div>
                   </div>

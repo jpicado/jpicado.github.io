@@ -81,7 +81,7 @@ body {
 }
 
 .graphicalView {
-    width: 500px;
+    /*width: 500px;*/
     height: 500px;
     z-index: 999;
     border: 1px solid #E0E0E0;
