@@ -373,5 +373,16 @@ cy2.$(num).qtip({
 });
 } 
 
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      var target = $(e.target).attr("href") // activated tab
+      if (target == "#compareTab") {
+        cy2.resize(); 
+        cy2.layout({
+          name: 'cose',
+          padding: 10
+        });
+      }
+    }); 
+
 
 }); // on dom ready

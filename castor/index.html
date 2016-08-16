@@ -10,7 +10,7 @@
   <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
   
   <!-- Bootstrap -->
-  <link href="css/bootstrap-paper.css" rel="stylesheet">
+  <link href="css/bootstrap-paper-custom.css" rel="stylesheet">
 
   <link href="css/custom.css" rel="stylesheet">
   <!--<link href="css/sb-admin-2.css" rel="stylesheet">-->
@@ -27,8 +27,10 @@
       <div id="mainContainer" class="container">
 
         <ul class="nav nav-tabs default-primary-color roundedTopCorners">
-          <li class="active"><a data-toggle="tab" href="#compareTab">Schema Independence</a></li>
-          <li><a data-toggle="tab" href="#learnTab">Castor Relational Learning</a></li>
+          
+          <li class="active"><a data-toggle="tab" href="#learnTab">Castor Relational Learning</a></li>
+
+          <li><a data-toggle="tab" href="#compareTab">Schema Independence</a></li>
           <!--<li><a data-toggle="tab" href="#testTab">Test</a></li>-->
           <li class="pull-right dropdown">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
@@ -47,7 +49,7 @@
         <div class="tab-content">
 
           <!-- compare -->
-          <div id="compareTab" class="tab-pane fade in active ">
+          <div id="compareTab" class="tab-pane fade in  ">
             <!-- db info -->
             <div class="col-md-12 text-center databaseInfoDiv">
               <h5 data-toggle="tooltip" title="Structural information about chemical compounds.">HIV database</h5>
@@ -242,7 +244,7 @@
               <!-- /compare -->
 
               <!-- learn -->
-              <div id="learnTab" class="tab-pane fade">
+              <div id="learnTab" class="tab-pane fade in active">
                 <!-- db info -->
                 <div class="col-md-12 text-center databaseInfoDiv">
                   <h5 class="">HIV database</h5>
@@ -269,7 +271,7 @@
                         <h5>Training data</h5>
                         <p id="learnTrainingExamplesInfo">100 positive, 200 negative examples</p>
                       </div>
-                      <div class="col-md-12">
+                      <div class="col-md-12" id="trainingExamplesDiv">
                         <div class="col-md-6">
                           <p>Positive examples</p>
                           <div class="bordered roundedCorners">
@@ -283,7 +285,7 @@
                           </div>
                         </div>
                       </div>
-                      <div id="testingDataDiv" class="col-md-12">
+                      <!--<div id="testingDataDiv" class="col-md-12">
                         <h5>Testing data</h5>
 
                         <div class="radio">
@@ -299,8 +301,10 @@
                           </label>
                         </div>
 
+                      </div>-->
+                      <div id="learnButtonDiv" class="col-md-12 text-center"> 
+                        <a href="#" class="btn btn-primary btn-lg ">Learn</a>
                       </div>
-                      <a href="#" class="btn btn-primary btn-lg pull-right  ">Learn</a>
                     </div>
                   </div>
                   <!-- /schemas and training data -->

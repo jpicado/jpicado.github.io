@@ -345,6 +345,17 @@ cy1.$(num).qtip({
     }
   }
 });
-} 
+}
+
+$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+      var target = $(e.target).attr("href") // activated tab
+      if (target == "#compareTab") {
+        cy1.resize(); 
+        cy1.layout({
+          name: 'cose',
+          padding: 10
+        });
+      }
+    }); 
 
 }); // on dom ready
