@@ -53,7 +53,7 @@
             <!-- db info -->
             <div class="col-md-12 text-center databaseInfoDiv">
               <h5 data-toggle="tooltip" title="Structural information about chemical compounds.">HIV database</h5>
-              <h5 data-toggle="tooltip" title="Identify structural pattern of compounds with anti-HIV activity.">Target: hivActive(compound)</h5>
+              <h5 data-toggle="tooltip" title="Identify structural pattern of compounds with anti-HIV activity.">Target relation: hivActive(compound)</h5>
             </div>
             <!-- /db info -->
 
@@ -65,7 +65,7 @@
                 <div class="col-md-6">
                   <div class="schemaInfo">
                     <h5 id="compareSchema1Title">Original Schema</h5>
-                    <p id="compareSchema1Info">80 relations, 14M tuples</p>
+                    <p id="compareSchema1Info">80 relations, 86 attributes</p>
                   </div>
                   <!--div class="schemaPicture">
                     <img id="compareSchema1Picture" src="images/placeholder.png"/>
@@ -77,7 +77,7 @@
                 <div class="col-md-6">
                   <div class="schemaInfo">
                     <h5 id="compareSchema2Title">4NF Schema</h5>
-                    <p id="compareSchema2Info">77 relations, 7.8M tuples</p>
+                    <p id="compareSchema2Info">77 relations, 83 attributes</p>
                   </div>
                   <!--div class="schemaPicture">
                     <img id="compareSchema2Picture" src="images/placeholder.png"/>
@@ -89,7 +89,7 @@
               </div>
               <!-- /schemas -->
 
-              <!-- results -->
+              <!-- results compare -->
               <div id="resultsDiv" class="col-md-12">
                 <ul class="nav nav-tabs default-primary-color roundedTopCorners">
                   <li class="active"><a data-toggle="tab" href="#datalogTab">Definitions</a></li>
@@ -101,45 +101,101 @@
 
                   <!-- statistics -->
                   <div id="statisticsTab" class="tab-pane fade">
-                    <table class="table table-hover table-bordered">
-                      <thread>
-                        <tr class="nohover-row">
-                          <th></th>
-                          <th colspan="2" id="stats-algorithm1"></th>
-                          <th colspan="2" id="stats-algorithm2"></th>
-                        </tr>
-                        <tr>
-                          <th>Schema</th>
-                          <th id="stats-schemaTitle-algorithm1-schema1"></th>
-                          <th id="stats-schemaTitle-algorithm1-schema2"></th>
-                          <th id="stats-schemaTitle-algorithm2-schema1"></th>
-                          <th id="stats-schemaTitle-algorithm2-schema2"></th>
-                        </tr>
-                      </thread>
-                      <tbody>
-                        <tr>
-                          <th scope="row">Precision</th>
-                          <td id="stats-precision-algorithm1-schema1"></td>
-                          <td id="stats-precision-algorithm1-schema2"></td>
-                          <td id="stats-precision-algorithm2-schema1"></td>
-                          <td id="stats-precision-algorithm2-schema2"></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Recall</th>
-                          <td id="stats-recall-algorithm1-schema1"></td>
-                          <td id="stats-recall-algorithm1-schema2"></td>
-                          <td id="stats-recall-algorithm2-schema1"></td>
-                          <td id="stats-recall-algorithm2-schema2"></td>
-                        </tr>
-                        <tr>
-                          <th scope="row">Running time</th>
-                          <td id="stats-time-algorithm1-schema1"></td>
-                          <td id="stats-time-algorithm1-schema2"></td>
-                          <td id="stats-time-algorithm2-schema1"></td>
-                          <td id="stats-time-algorithm2-schema2"></td>
-                        </tr>
-                      </tbody>
-                    </table>
+
+                    <!-- statistics algorithm 1 -->
+                    <div class="col-md-12 light-primary-color">
+                      <h5 class="text-center" id="stats-algorithm1"></h5>
+                    </div>
+
+                    <div class="tabContent col-md-12">
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="stats-schemaTitle-algorithm1-schema1"></h5>
+                        <table class="table table-hover">
+                          <tbody>
+                            <tr>
+                              <td><h5>Precision</h5></td>
+                              <td><h5 id="stats-precision-algorithm1-schema1"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Recall</h5></td>
+                              <td><h5 id="stats-recall-algorithm1-schema1"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Time</h5></td>
+                              <td><h5 id="stats-time-algorithm1-schema1"></h5></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="stats-schemaTitle-algorithm1-schema2"></h5>
+                        <table class="table table-hover">
+                          <tbody>
+                            <tr>
+                              <td><h5>Precision</h5></td>
+                              <td><h5 id="stats-precision-algorithm1-schema2"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Recall</h5></td>
+                              <td><h5 id="stats-recall-algorithm1-schema2"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Time</h5></td>
+                              <td><h5 id="stats-time-algorithm1-schema2"></h5></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- /statistics algorithm 1 -->
+
+                    <!-- statistics algorithm 2 -->
+                    <div class="col-md-12 light-primary-color">
+                      <h5 class="text-center" id="stats-algorithm2"></h5>
+                    </div>
+
+                    <div class="tabContent col-md-12">
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="stats-schemaTitle-algorithm2-schema1"></h5>
+                        <table class="table table-hover">
+                          <tbody>
+                            <tr>
+                              <td><h5>Precision</h5></td>
+                              <td><h5 id="stats-precision-algorithm2-schema1"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Recall</h5></td>
+                              <td><h5 id="stats-recall-algorithm2-schema1"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Time</h5></td>
+                              <td><h5 id="stats-time-algorithm2-schema1"></h5></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="stats-schemaTitle-algorithm2-schema2"></h5>
+                        <table class="table table-hover">
+                          <tbody>
+                            <tr>
+                              <td><h5>Precision</h5></td>
+                              <td><h5 id="stats-precision-algorithm2-schema2"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Recall</h5></td>
+                              <td><h5 id="stats-recall-algorithm2-schema2"></h5></td>
+                            </tr>
+                            <tr>
+                              <td><h5>Time</h5></td>
+                              <td><h5 id="stats-time-algorithm2-schema2"></h5></td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    <!-- /statistics algorithm 2 -->
+
                   </div>
                   <!-- /statistics -->
 
@@ -150,54 +206,63 @@
                     
                     <div class="col-md-12 light-primary-color">
                       <h5 class="text-center" id="datalog-algorithm1">
-                      </div>
-                      <div class="tabContent col-md-12">
-                        <div class="col-md-6">
-                          <h5 class="text-center" id="datalog-algorithm1-schema1-title"></h5>
-                          <div class="bordered roundedTopCorners col-md-12">
-                            <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema1"></textarea>
-                          </div>
-                          <div id="graphical-algorithm1-schema1" class="graphicalView roundedBottomCorners col-md-12"></div>
-                        </div>
-                        <div class="col-md-6">
-                          <h5 class="text-center" id="datalog-algorithm1-schema2-title"></h5>
-                          <div class="bordered roundedTopCorners col-md-12">
-                            <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema2"></textarea>
-                          </div>
-                          <div id="graphical-algorithm1-schema2" class="graphicalView roundedBottomCorners col-md-12"></div>
-                        </div>
-                      </div>
-
-                      <!-- /algorithm1 -->
-
-                      <!-- algorithm2 -->
-                      <div class="col-md-12 light-primary-color">
-                        <h5 class="text-center" id="datalog-algorithm2">
-                        </div>
-                        <div class="tabContent roundedBottomCorners col-md-12">
-                          <div class="col-md-6">
-                            <h5 class="text-center" id="datalog-algorithm2-schema1-title"></h5>
-                            <div class="bordered roundedTopCorners col-md-12">
-                              <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema1"></textarea>
-                            </div>
-                            <div id="graphical-algorithm2-schema1" class="graphicalView roundedBottomCorners col-md-12"></div>
-                          </div>
-                          <div class="col-md-6">
-                            <h5 class="text-center" id="datalog-algorithm2-schema2-title"></h5>
-                            <div class="bordered roundedTopCorners col-md-12">
-                              <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema2"></textarea>
-                            </div>
-                            <div id="graphical-algorithm2-schema2" class="graphicalView roundedBottomCorners col-md-12"></div>
-                          </div>
-                        </div>
-                        <!-- /algorithm2 -->
-
-                      </div>
-                      <!-- /datalog -->
-
                     </div>
+                    <div class="tabContent col-md-12">
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="datalog-algorithm1-schema1-title"></h5>
+                        <h5>Datalog:</h5>
+                        <div class="datalogDiv col-md-12">
+                          <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema1"></textarea>
+                        </div>
+                        <h5>Graphical:</h5>
+                        <div id="graphical-algorithm1-schema1" class="graphicalView roundedCorners col-md-12"></div>
+                      </div>
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="datalog-algorithm1-schema2-title"></h5>
+                        <h5>Datalog:</h5>
+                        <div class="datalogDiv col-md-12">
+                          <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema2"></textarea>
+                        </div>
+                        <h5>Graphical:</h5>
+                        <div id="graphical-algorithm1-schema2" class="graphicalView roundedCorners col-md-12"></div>
+                      </div>
+                    </div>
+
+                    <!-- /algorithm1 -->
+
+                    <!-- algorithm2 -->
+                    <div class="col-md-12 light-primary-color">
+                      <h5 class="text-center" id="datalog-algorithm2">
+                    </div>
+                    <div class="tabContent roundedBottomCorners col-md-12">
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="datalog-algorithm2-schema1-title"></h5>
+                        <h5>Datalog:</h5>
+                        <div class="datalogDiv col-md-12">
+                          <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema1"></textarea>
+                        </div>
+                        <h5>Graphical:</h5>
+                        <div id="graphical-algorithm2-schema1" class="graphicalView roundedCorners col-md-12"></div>
+                      </div>
+                      <div class="col-md-6">
+                        <h5 class="text-center" id="datalog-algorithm2-schema2-title"></h5>
+                        <h5>Datalog:</h5>
+                        <div class="datalogDiv col-md-12">
+                          <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema2"></textarea>
+                        </div>
+                        <h5>Graphical:</h5>
+                        <div id="graphical-algorithm2-schema2" class="graphicalView roundedCorners col-md-12"></div>
+                      </div>
+                    </div>
+                    <!-- /algorithm2 -->
+
                   </div>
-                  <!-- /results -->
+                  <!-- /datalog -->
+
+                  </div>
+
+                  </div>
+                  <!-- /results compare -->
                 </div>
                 <!-- /compareTabContent -->
               </div>
@@ -220,7 +285,7 @@
                     <div class="col-md-6">
                       <div class="schemaInfo">
                         <h5 id="learnSchemaTitle">Original Schema</h5>
-                        <p id="learnSchemaInfo">80 relations, 14M tuples</p>
+                        <p id="learnSchemaInfo">80 relations, 86 attributes</p>
                       </div>
                       <div class="schemaPicture">
                         <img id="learnSchemaPicture" src="images/placeholder.png"/>
@@ -263,11 +328,67 @@
 
                       </div>-->
                       <div id="learnButtonDiv" class="col-md-12 text-center"> 
-                        <a href="#" class="btn btn-primary btn-lg ">Learn</a>
+                        <a href="#" class="btn btn-primary btn-lg" id="learnButton">Learn</a>
+                        <a href="#" class="btn btn-primary btn-lg" id="clearButton">Clear</a>
                       </div>
                     </div>
                   </div>
                   <!-- /schemas and training data -->
+
+                  <!-- results learn -->
+                  <div id="learnResultsDiv" class="col-md-12">
+                    <ul class="nav nav-tabs default-primary-color roundedTopCorners">
+                      <li class="active"><a data-toggle="tab" href="#learnDefinitionsTab">Definitions</a></li>
+                      <li><a data-toggle="tab" href="#learnEffectivenessTab">Effectiveness</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+
+                      <!-- learnDefinitionsTab -->
+                      <div id="learnDefinitionsTab" class="tab-pane fade in active">
+                        <div class="tabContent col-md-12">
+                          <div class="col-md-6">
+                            <h5>Datalog:</h5>
+                            <div class="datalogDiv col-md-12">
+                              <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-learnTab"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <h5>Graphical:</h5>
+                            <div id="graphical-learnTab" class="graphicalView roundedCorners col-md-12"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- /learnDefinitionsTab -->
+
+                      <!-- learnEffectivenessTab -->
+                      <div id="learnEffectivenessTab" class="tab-pane fade">
+                        <div class="col-md-12">
+                          <table class="table table-hover">
+                            <tbody>
+                              <tr>
+                                <td><h5>Precision</h5></td>
+                                <td><h5 id="learnEffectiveness-precision"></h5></td>
+                              </tr>
+                              <tr>
+                                <td><h5>Recall</h5></td>
+                                <td><h5 id="learnEffectiveness-recall"></h5></td>
+                              </tr>
+                              <tr>
+                                <td><h5>Time</h5></td>
+                                <td><h5 id="learnEffectiveness-time"></h5></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                      <!-- /learnEffectivenessTab -->
+
+                    </div>
+
+                  </div>
+                  <!-- /results learn -->
+
 
                 </div>
                 <!-- /learnTabContent -->
@@ -300,8 +421,12 @@
     <script src="js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="js/cytoscape.js"></script>
-    <script type="text/javascript" src="js/functions.js"></script>
-    <!--<script type="text/javascript" src="js/graphical-holder.js"></script>-->
+
+    <script type="text/javascript" src="js/commonFunctions.js"></script>
+    <script type="text/javascript" src="js/loadFunctions.js"></script>
+    <script type="text/javascript" src="js/compareTabFunctions.js"></script>
+    <script type="text/javascript" src="js/learnTabFunctions.js"></script>
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-qtip/2.2.5/cytoscape-qtip.js"></script>
