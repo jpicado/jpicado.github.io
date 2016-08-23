@@ -33,10 +33,27 @@ var cy = cytoscape({
     .selector('#bonds')
       .css({
    'height': 35,
-   'width': 16,
-        'background-image': 'http://i.imgur.com/KKhXkft.png'
+   'width': 27.5,
+        'background-image': 'http://i.imgur.com/xKLdQ0U.png'
       })
-    
+    .selector('#bondtypes1')
+      .css({
+   'height': 30,
+   'width': 42.5,
+        'background-image': 'http://i.imgur.com/21yXeRg.png'
+      })
+  .selector('#bondtypes2')
+      .css({
+   'height': 30,
+   'width': 42.5,
+        'background-image': 'http://i.imgur.com/7nECSpx.png'
+      })
+  .selector('#bondtypes3')
+      .css({
+   'height': 30,
+   'width': 42.5,
+        'background-image': 'http://i.imgur.com/Zxehuom.png'
+      })
   .selector('#n1')
       .css({
    'height': 14,
@@ -419,6 +436,9 @@ var cy = cytoscape({
     nodes: [
       { data: { id: 'compounds' } },
       { data: { id: 'bonds' } },
+      { data: { id: 'bondtypes1' } },
+      { data: { id: 'bondtypes2' } },
+      { data: { id: 'bondtypes3' } },
       { data: { id: 'n1' } },
       { data: { id: 'n2' } },
       { data: { id: 'n3' } },
@@ -608,7 +628,10 @@ var cy = cytoscape({
       // { data: { source: 'bonds', target: 'n61' } },
       // { data: { source: 'bonds', target: 'n62' } },
       { data: { source: 'compounds', target: 'n61' } },
-      { data: { source: 'compounds', target: 'n62' } }
+      { data: { source: 'compounds', target: 'n62' } },
+      { data: { source: 'bonds', target: 'bondtypes1' } },
+      { data: { source: 'bonds', target: 'bondtypes2' } },
+      { data: { source: 'bonds', target: 'bondtypes3' } }
     ]
   },
   
@@ -618,6 +641,7 @@ var cy = cytoscape({
     padding: 10
   }
 }); // cy init
+  
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       var target = $(e.target).attr("href") // activated tab
@@ -629,7 +653,6 @@ $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
           padding: 10
         });
       }
-    });
-  
+    });  
 
 }); // on dom ready
