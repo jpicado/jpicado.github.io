@@ -2,10 +2,19 @@ body {
   font: 14px helvetica neue, helvetica, arial, sans-serif;
 }
 
-#cy {
-  height: 100%;
-  width: 100%;
+#cy1 {
+  width: 500px;
+    height: 350px;
+    z-index: 999;
+    border: 1px solid #E0E0E0;
+    border-radius: 5px;
+}
+
+#eat {
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 1em;
+  top: 1em;
+  font-size: 1em;
+  z-index: -1;
+  color: #c88;
 }

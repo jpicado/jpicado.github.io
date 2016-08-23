@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Castor</title>
+
+  <!--<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>-->
+  
+  <!-- Bootstrap -->
+  <link href="css/bootstrap-paper-custom.css" rel="stylesheet">
+
+  <link href="css/custom.css" rel="stylesheet">
+  <!--<link href="css/sb-admin-2.css" rel="stylesheet">-->
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+    </head>
+    <body>
+      <!-- container -->
+      <div id="mainContainer" class="container">
+
+        <ul class="nav nav-tabs default-primary-color roundedTopCorners">
+          
+          <li class="active"><a data-toggle="tab" href="#learnTab">Castor Relational Learning</a></li>
+
+          <li><a data-toggle="tab" href="#compareTab">Schema Independence</a></li>
+          <!--<li><a data-toggle="tab" href="#testTab">Test</a></li>-->
+          <li class="pull-right dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+              Datasets <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a onclick="loadHIVDataset();">HIV</a></li>
+              <li class="divider"></li>
+              <li><a onclick="loadIMDbDataset();">IMDb</a></li>
+            </ul>
+          </li>
+
+        </ul>
+        
+        <!-- tab-content -->
+        <div class="tab-content">
+
+          <!-- compare -->
+          <div id="compareTab" class="tab-pane fade in  ">
+            <!-- db info -->
+            <div class="col-md-12 text-center databaseInfoDiv">
+              <h5 data-toggle="tooltip" title="Structural information about chemical compounds.">HIV database</h5>
+              <h5 data-toggle="tooltip" title="Identify structural pattern of compounds with anti-HIV activity.">Target: hivActive(compound)</h5>
+            </div>
+            <!-- /db info -->
+
+            <!-- compareTabContent -->
+            <div id="compareTabContent" class="col-md-12 roundedBottomCorners tabContent">
+
+              <!-- schemas -->
+              <div class="row col-md-12">
+                <div class="col-md-6">
+                  <div class="schemaInfo">
+                    <h5 id="compareSchema1Title">Original Schema</h5>
+                    <p id="compareSchema1Info">80 relations, 14M tuples</p>
+                  </div>
+                  <!--div class="schemaPicture">
+                    <img id="compareSchema1Picture" src="images/placeholder.png"/>
+                  </div-->
+                  <div class="schemaPicture col-md-12">
+                    <div id="cy1" ></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="schemaInfo">
+                    <h5 id="compareSchema2Title">4NF Schema</h5>
+                    <p id="compareSchema2Info">77 relations, 7.8M tuples</p>
+                  </div>
+                  <!--div class="schemaPicture">
+                    <img id="compareSchema2Picture" src="images/placeholder.png"/>
+                  </div-->
+                  <div class="schemaPicture col-md-12">
+                    <div id="cy2" ></div>
+                  </div>
+                </div>
+              </div>
+              <!-- /schemas -->
+
+              <!-- results -->
+              <div id="resultsDiv" class="col-md-12">
+                <ul class="nav nav-tabs default-primary-color roundedTopCorners">
+                  <li class="active"><a data-toggle="tab" href="#statisticsTab">Effectiveness</a></li>
+                  <li><a data-toggle="tab" href="#datalogTab">Definitions</a></li>
+                  <li><a data-toggle="tab" href="#graphicalTab">Graphical</a></li>
+                </ul>
+
+                <div class="tab-content">
+
+                  <!-- statistics -->
+                  <div id="statisticsTab" class="tab-pane fade in active">
+                    <table class="table table-hover table-bordered">
+                      <thread>
+                        <tr class="nohover-row">
+                          <th></th>
+                          <th colspan="2" id="stats-algorithm1"></th>
+                          <th colspan="2" id="stats-algorithm2"></th>
+                        </tr>
+                        <tr>
+                          <th>Schema</th>
+                          <th id="stats-schemaTitle-algorithm1-schema1"></th>
+                          <th id="stats-schemaTitle-algorithm1-schema2"></th>
+                          <th id="stats-schemaTitle-algorithm2-schema1"></th>
+                          <th id="stats-schemaTitle-algorithm2-schema2"></th>
+                        </tr>
+                      </thread>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Precision</th>
+                          <td id="stats-precision-algorithm1-schema1"></td>
+                          <td id="stats-precision-algorithm1-schema2"></td>
+                          <td id="stats-precision-algorithm2-schema1"></td>
+                          <td id="stats-precision-algorithm2-schema2"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Recall</th>
+                          <td id="stats-recall-algorithm1-schema1"></td>
+                          <td id="stats-recall-algorithm1-schema2"></td>
+                          <td id="stats-recall-algorithm2-schema1"></td>
+                          <td id="stats-recall-algorithm2-schema2"></td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Running time</th>
+                          <td id="stats-time-algorithm1-schema1"></td>
+                          <td id="stats-time-algorithm1-schema2"></td>
+                          <td id="stats-time-algorithm2-schema1"></td>
+                          <td id="stats-time-algorithm2-schema2"></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /statistics -->
+
+                  <!-- datalog -->
+                  <div id="datalogTab" class="tab-pane fade">
+
+                    <!-- algorithm1 -->
+                    
+                    <div class="col-md-12 light-primary-color">
+                      <h5 class="text-center" id="datalog-algorithm1">
+                      </div>
+                      <div class="tabContent col-md-12">
+                        <div class="col-md-6">
+                          <h5 class="text-center" id="datalog-algorithm1-schema1-title"></h5>
+                          <div class="bordered roundedCorners">
+                            <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema1"></textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <h5 class="text-center" id="datalog-algorithm1-schema2-title"></h5>
+                          <div class="bordered roundedCorners">
+                            <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm1-schema2"></textarea>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- /algorithm1 -->
+
+                      <!-- algorithm2 -->
+                      <div class="col-md-12 light-primary-color">
+                        <h5 class="text-center" id="datalog-algorithm2">
+                        </div>
+                        <div class="tabContent roundedBottomCorners col-md-12">
+                          <div class="col-md-6">
+                            <h5 class="text-center" id="datalog-algorithm2-schema1-title"></h5>
+                            <div class="bordered roundedCorners">
+                              <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema1"></textarea>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <h5 class="text-center" id="datalog-algorithm2-schema2-title"></h5>
+                            <div class="bordered roundedCorners">
+                              <textarea readonly class="form-control datalogDefinition" rows="10" id="datalog-algorithm2-schema2"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /algorithm2 -->
+
+                      </div>
+                      <!-- /datalog -->
+
+                      <!-- graphical -->
+                      <div id="graphicalTab" class="tab-pane fade">
+
+                        <!-- algorithm1 -->
+                        <div class="col-md-12 light-primary-color">
+                          <div class="text-center"><h5 id="graphical-algorithm1"></h5></div>
+                        </div>
+                        <div class="tabContent col-md-12">
+                          <div class="col-md-6">
+                            <h5 class="text-center" id="graphical-algorithm1-schema1-title"></h5>
+                            <!--<img src="images/placeholder-definition.jpg">-->
+                            <div id="graphical-algorithm1-schema1" class="graphicalView roundedCorners"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <h5 class="text-center" id="graphical-algorithm1-schema2-title"></h5>
+                            <div id="graphical-algorithm1-schema2" class="graphicalView roundedCorners"></div>
+                            <!--<img src="images/placeholder-definition.jpg">-->
+                          </div>
+                        </div>
+                        <!-- /algorithm1 -->
+
+                        <!-- algorithm2 -->
+                        <div class="col-md-12 light-primary-color">
+                          <div class="text-center"><h5 id="graphical-algorithm2"></h5></div>
+                        </div>
+                        <div class="tabContent roundedBottomCorners col-md-12">
+                          <div class="col-md-6">
+                            <h5 class="text-center" id="graphical-algorithm2-schema1-title"></h5>
+                            <!--<img src="images/placeholder-definition.jpg">-->
+                            <div id="graphical-algorithm2-schema1" class="graphicalView roundedCorners"></div>
+                          </div>
+                          <div class="col-md-6">
+                            <h5 class="text-center" id="graphical-algorithm2-schema2-title"></h5>
+                            <div id="graphical-algorithm2-schema2" class="graphicalView roundedCorners"></div>
+                            <!--<img src="images/placeholder-definition.jpg">-->
+                          </div>
+                        </div>
+                        <!-- /algorithm2 -->
+
+
+
+                      </div>
+                      <!-- /graphical -->
+
+                    </div>
+                  </div>
+                  <!-- /results -->
+                </div>
+                <!-- /compareTabContent -->
+              </div>
+              <!-- /compare -->
+
+              <!-- learn -->
+              <div id="learnTab" class="tab-pane fade in active">
+                <!-- db info -->
+                <div class="col-md-12 text-center databaseInfoDiv">
+                  <h5 class="">HIV database</h5>
+                  <h6 class="">Target: hivActive(compound)</h6>
+                </div>
+                <!-- /db info -->
+
+                <!-- learnTabContent -->
+                <div id="learnTabContent" class="col-md-12 roundedBottomCorners tabContent">
+
+                  <!-- schemas and training data -->
+                  <div class="row col-md-12">
+                    <div class="col-md-6">
+                      <div class="schemaInfo">
+                        <h5 id="learnSchemaTitle">Original Schema</h5>
+                        <p id="learnSchemaInfo">80 relations, 14M tuples</p>
+                      </div>
+                      <div class="schemaPicture">
+                        <img id="learnSchemaPicture" src="images/placeholder.png"/>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="schemaInfo col-md-12">
+                        <h5>Training data</h5>
+                        <p id="learnTrainingExamplesInfo">100 positive, 200 negative examples</p>
+                      </div>
+                      <div class="col-md-12" id="trainingExamplesDiv">
+                        <div class="col-md-6">
+                          <p>Positive examples</p>
+                          <div class="bordered roundedCorners">
+                            <textarea readonly class="form-control examplesArea" rows="6" id="">compound1&#13;compound2&#13;compound3&#13;compound4&#13;compound5</textarea>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <p>Negative examples</p>
+                          <div class="bordered roundedCorners">
+                            <textarea readonly class="form-control examplesArea" rows="6" id="">compound11&#13;compound12&#13;compound13&#13;compound14&#13;compound15</textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <!--<div id="testingDataDiv" class="col-md-12">
+                        <h5>Testing data</h5>
+
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                            Cross-validation
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                            Percentage split
+                          </label>
+                        </div>
+
+                      </div>-->
+                      <div id="learnButtonDiv" class="col-md-12 text-center"> 
+                        <a href="#" class="btn btn-primary btn-lg ">Learn</a>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- /schemas and training data -->
+
+                </div>
+                <!-- /learnTabContent -->
+              </div>
+              <!-- /learn -->
+
+              <!-- test -->
+          <!--<div id="testTab" class="tab-pane fade">
+            <h3>TEST</h3>
+            <p>Some content in menu 2.</p>
+          </div>-->
+          <!-- /test -->
+
+        </div>
+        <!-- /tab-content -->
+
+        <!-- footer -->
+      <!--<footer>
+        <p>&copy; IDEA Lab</p>
+      </footer>-->
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
+    <script src="js/jquery-3.1.0.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/cytoscape.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <!--<script type="text/javascript" src="js/graphical-holder.js"></script>-->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-qtip/2.2.5/cytoscape-qtip.js"></script>
+    <script src="schemas/hiv1/code.js"></script>
+    <script src="schemas/hiv2/code.js"></script>
+
+  </body>
+  </html>

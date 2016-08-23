@@ -1,361 +1,635 @@
 $(function(){ // on dom ready
 
-var cy1 = cytoscape({
+// photos from flickr with creative commons license
   
-  container: document.getElementById('cy1'),
+var cy = cytoscape({
+  container: document.getElementById('compareTabSchema1'),
+  
+  boxSelectionEnabled: false,
+  autounselectify: true,
+  
   style: cytoscape.stylesheet()
     .selector('node')
       .css({
-        'width': 'mapData(weight, 40, 80, 20, 60)',
-        'content': 'data(name)',
-        'text-valign': 'center',
-        'text-outline-width': 2,
-        'text-outline-color': 'data(faveColor)',
-        'background-color': 'data(faveColor)',
-        'color': '#fff'
-      })
-    .selector(':selected')
-      .css({
-        'border-width': 3,
-        'border-color': '#333'
+      'shape': 'rectangle',
+        'background-fit': 'contain',
+        'border-color': '#000',
+        'border-width': 0.1,
+        'border-opacity': 0.5
       })
     .selector('edge')
       .css({
-        'curve-style': 'bezier',
-        'opacity': 0.25,
-        'width': 'mapData(strength, 70, 100, 2, 6)',
-        
-        'line-color': 'data(faveColor)',
-        'source-arrow-color': 'data(faveColor)',
-        'target-arrow-color': 'data(faveColor)'
+        'width': 1,
+        'line-color': '#ffaaaa',
+        'target-arrow-color': '#ffaaaa',
+        'curve-style': 'bezier'
       })
-    .selector('edge.questionable')
+    .selector('#compounds')
       .css({
-        'line-style': 'dotted',
-        'target-arrow-shape': 'diamond'
+   'height': 30,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/ye1z3SG.png'
       })
-    .selector('.faded')
+    .selector('#bonds')
       .css({
-        'opacity': 0.25,
-        'text-opacity': 0
+   'height': 35,
+   'width': 16,
+        'background-image': 'http://i.imgur.com/KKhXkft.png'
+      })
+    
+  .selector('#n1')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/u9QygtF.png'
+      })
+  .selector('#n2')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/7UHfLai.png'
+      })
+  .selector('#n3')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/hNbdKtC.png'
+      })
+      .selector('#n4')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/7lwQGkN.png'
+      })
+      .selector('#n5')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/COf3pj3.png'
+      })
+      .selector('#n6')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/k7N451l.png'
+      })
+      .selector('#n7')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/4MZactY.png'
+      })
+      .selector('#n8')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/oHZSL0F.png'
+      })
+      .selector('#n9')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/qQs6uDR.png'
+      })
+      .selector('#n10')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/bF8fWJV.png'
+      })
+      .selector('#n11')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/lyCLgYi.png'
+      })
+      .selector('#n12')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/35ZsKwR.png'
+      })
+      .selector('#n13')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/9R1y43i.png'
+      })
+      .selector('#n14')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/Dh519eI.png'
+      })
+      .selector('#n15')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/00fbtD9.png'
+      })
+      .selector('#n16')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/kn0sNB0.png'
+      })
+      .selector('#n17')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/E9QcWm5.png'
+      })
+      .selector('#n18')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/I68SdWw.png'
+      })
+      .selector('#n19')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/uu3J9Rc.png'
+      })
+      .selector('#n20')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/juT3IlY.png'
+      })
+      .selector('#n21')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/p7dHse1.png'
+      })
+      .selector('#n22')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/pwtoZy4.png'
+      })
+      .selector('#n23')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/3axZzPe.png'
+      })
+      .selector('#n24')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/QED5Ci7.png'
+      })
+      .selector('#n25')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/mBdjQ4S.png'
+      })
+      .selector('#n26')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/Pp6cPxA.png'
+      })
+      .selector('#n27')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/Ka12XlW.png'
+      })
+      .selector('#n28')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/9wsAnjO.png'
+      })
+      .selector('#n29')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/UuJQPzT.png'
+      })
+      .selector('#n30')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/eLatxq5.png'
+      })
+      .selector('#n31')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/8PAWGH9.png'
+      })
+      .selector('#n32')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/HiAvzKn.png'
+      })
+      .selector('#n33')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/encEXyb.png'
+      })
+      .selector('#n34')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/0dFWbcl.png'
+      })
+      .selector('#n35')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/dM2loRs.png'
+      })
+      .selector('#n36')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/DipyYcp.png'
+      })
+      .selector('#n37')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/ygG3Sjn.png'
+      })
+      .selector('#n38')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/Acp8dDq.png'
+      })
+      .selector('#n39')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/eoO9ZDi.png'
+      })
+      .selector('#n40')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/sR15NNS.png'
+      })
+      .selector('#n41')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/y3gaXey.png'
+      })
+      .selector('#n42')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/YTWVzNr.png'
+      })
+      .selector('#n43')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/afqujR5.png'
+      })
+      .selector('#n44')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/oyNN4Pg.png'
+      })
+      .selector('#n45')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/DlBNJq5.png'
+      })
+      .selector('#n46')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/vkFw2V2.png'
+      })
+      .selector('#n47')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/NMcfVFy.png'
+      })
+      .selector('#n48')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/SzTQAgl.png'
+      })
+      .selector('#n49')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/9xLnviY.png'
+      })
+      .selector('#n50')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/jexyN9O.png'
+      })
+      .selector('#n51')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/fzVqEme.png'
+      })
+      .selector('#n52')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/TzJSlJn.png'
+      })
+      .selector('#n53')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/kUSNOSN.png'
+      })
+      .selector('#n54')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/LUGzH6a.png'
+      })
+      .selector('#n55')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/78ImU5n.png'
+      })
+      .selector('#n56')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/gvffjLy.png'
+      })
+      .selector('#n57')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/xuVPRZM.png'
+      })
+      .selector('#n58')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/CRnE2uH.png'
+      })
+      .selector('#n59')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/Q2Vsenf.png'
+      })
+      .selector('#n60')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/GUVh9yB.png'
+      })
+      .selector('#n61')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/wpRZ4JW.png'
+      })
+      .selector('#n62')
+      .css({
+   'height': 14,
+   'width': 40,
+        'background-image': 'http://i.imgur.com/mjg1HL1.png'
       }),
+
+
+
+
+
   
   elements: {
     nodes: [
-      { data: { id: 'p1', name: 'P2_0', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p2', name: 'P2_1', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p3', name: 'P2_2', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p4', name: 'P2_3', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p5', name: 'P2_4', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p6', name: 'P2_5', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p7', name: 'P2_6', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p8', name: 'P2_7', weight: 40, faveColor: '#6FB1FC'  } },
-      { data: { id: 'p9', name: 'P2_8', weight: 40, faveColor: '#6FB1FC'  } },
-		{ data: { id: 'p10', name: 'P2_9', weight: 40, faveColor: '#6FB1FC'  } },
-		{ data: { id: 'p11', name: 'P2_10', weight: 40, faveColor: '#6FB1FC'  } },
-		{ data: { id: 'p12', name: 'P3', weight: 40, faveColor: '#6FB1FC'  } },
-
-      { data: { id: 'b', name: 'Bonds', weight: 60, faveColor: '#EDA1ED'  } },
-      { data: { id: 'c', name: 'Compounds', weight: 80, faveColor: '#86B342'  } },
+      { data: { id: 'compounds' } },
+      { data: { id: 'bonds' } },
+      { data: { id: 'n1' } },
+      { data: { id: 'n2' } },
+      { data: { id: 'n3' } },
+      { data: { id: 'n4' } },
+      { data: { id: 'n5' } },
+      { data: { id: 'n6' } },
+      { data: { id: 'n7' } },
+      { data: { id: 'n8' } },
+      { data: { id: 'n9' } },
+      { data: { id: 'n10' } },
+      { data: { id: 'n11' } },
+      { data: { id: 'n12' } },
+      { data: { id: 'n13' } },
+      { data: { id: 'n14' } },
+      { data: { id: 'n15' } },
+      { data: { id: 'n16' } },
+      { data: { id: 'n17' } },
+      { data: { id: 'n18' } },
+      { data: { id: 'n19' } },
+      { data: { id: 'n20' } },
+      { data: { id: 'n21' } },
+      { data: { id: 'n22' } },
+      { data: { id: 'n23' } },
+      { data: { id: 'n24' } },
+      { data: { id: 'n25' } },
+      { data: { id: 'n26' } },
+      { data: { id: 'n27' } },
+      { data: { id: 'n28' } },
+      { data: { id: 'n29' } },
+      { data: { id: 'n30' } },
+      { data: { id: 'n31' } },
+      { data: { id: 'n32' } },
+      { data: { id: 'n33' } },
+      { data: { id: 'n34' } },
+      { data: { id: 'n35' } },
+      { data: { id: 'n36' } },
+      { data: { id: 'n37' } },
+      { data: { id: 'n38' } },
+      { data: { id: 'n39' } },
+      { data: { id: 'n40' } },
+      { data: { id: 'n41' } },
+      { data: { id: 'n42' } },
+      { data: { id: 'n43' } },
+      { data: { id: 'n44' } },
+      { data: { id: 'n45' } },
+      { data: { id: 'n46' } },
+      { data: { id: 'n47' } },
+      { data: { id: 'n48' } },
+      { data: { id: 'n49' } },
+      { data: { id: 'n50' } },
+      { data: { id: 'n51' } },
+      { data: { id: 'n52' } },
+      { data: { id: 'n53' } },
+      { data: { id: 'n54' } },
+      { data: { id: 'n55' } },
+      { data: { id: 'n56' } },
+      { data: { id: 'n57' } },
+      { data: { id: 'n58' } },
+      { data: { id: 'n59' } },
+      { data: { id: 'n60' } },
+      { data: { id: 'n61' } },
+      { data: { id: 'n62' } }
       
-      { data: { id: 'n1', name: 'C', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n2', name: 'O', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n3', name: 'N', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n4', name: 'H', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n5', name: 'S', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n6', name: 'F', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n7', name: 'Cl', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n8', name: 'P', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n9', name: 'Br', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n10', name: 'I', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n11', name: 'Na', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n12', name: 'Se', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n13', name: 'Sn', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n14', name: 'Cu', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n15', name: 'Si', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n16', name: 'As', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n17', name: 'B', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n18', name: 'Ge', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n19', name: 'Ac', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n20', name: 'Mg', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n21', name: 'Rh', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n22', name: 'Fe', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n23', name: 'Ru', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n24', name: 'Co', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n25', name: 'Bi', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n26', name: 'Pd', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n27', name: 'Ni', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n28', name: 'Sb', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n29', name: 'Pt', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n30', name: 'Ir', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n31', name: 'Re', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n32', name: 'Mn', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n33', name: 'W', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n34', name: 'Mo', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n35', name: 'Gd', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n36', name: 'Tl', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n37', name: 'Zn', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n38', name: 'Hg', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n39', name: 'Ho', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n40', name: 'Pb', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n41', name: 'Cr', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n42', name: 'Ag', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n43', name: 'Ga', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n44', name: 'Au', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n45', name: 'Li', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n46', name: 'K', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n47', name: 'Cs', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n48', name: 'Nb', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n49', name: 'V', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n50', name: 'Nd', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n51', name: 'Al', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n52', name: 'Zr', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n53', name: 'Te', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n54', name: 'Ti', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n55', name: 'Cd', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n56', name: 'Yb', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n57', name: 'Ca', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n58', name: 'U', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n59', name: 'Er', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n60', name: 'Pr', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n61', name: 'Sm', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n62', name: 'Os', weight: 50, faveColor: '#F5A45D' } },
-      { data: { id: 'n63', name: 'Tb', weight: 50, faveColor: '#F5A45D' } }
     ],
     edges: [
-      { data: { source: 'c', target: 'n1', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n2', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n3', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n4', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n5', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n6', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n7', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n8', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n9', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n10', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n11', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n12', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n13', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n14', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n15', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n16', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n17', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n18', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n19', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n20', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n21', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n22', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n23', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n24', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n25', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n26', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n27', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n28', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n29', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n30', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n31', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n32', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n33', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n34', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n35', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n36', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n37', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n38', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n39', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n40', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n41', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n42', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n43', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n44', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n45', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n46', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n47', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n48', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n49', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n50', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n51', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n52', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n53', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n54', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n55', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n56', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n57', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n58', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n59', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n60', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n61', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n62', faveColor: '#86B342' } },
-      { data: { source: 'c', target: 'n63', faveColor: '#86B342' } },
-
-      { data: { source: 'b', target: 'n1', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n2', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n3', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n4', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n5', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n6', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n7', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n8', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n9', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n10', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n11', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n12', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n13', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n14', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n15', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n16', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n17', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n18', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n19', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n20', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n21', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n22', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n23', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n24', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n25', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n26', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n27', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n28', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n29', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n30', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n31', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n32', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n33', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n34', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n35', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n36', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n37', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n38', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n39', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n40', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n41', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n42', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n43', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n44', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n45', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n46', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n47', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n48', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n49', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n50', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n51', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n52', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n53', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n54', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n55', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n56', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n57', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n58', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n59', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n60', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n61', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n62', faveColor: '#EDA1ED' } },
-      { data: { source: 'b', target: 'n63', faveColor: '#EDA1ED' } },
-      
-      { data: { source: 'c', target: 'p1', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p2', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p3', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p4', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p5', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p6', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p7', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p8', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p9', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p10', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p11', faveColor: '#6FB1FC' } },
-      { data: { source: 'c', target: 'p12', faveColor: '#6FB1FC' } },
-
+      { data: { source: 'compounds', target: 'bonds' } },
+      // { data: { source: 'bonds', target: 'n1' } },
+      // { data: { source: 'bonds', target: 'n2' } },
+      // { data: { source: 'bonds', target: 'n3' } },
+      // { data: { source: 'bonds', target: 'n4' } },
+      // { data: { source: 'bonds', target: 'n5' } },
+      // { data: { source: 'bonds', target: 'n6' } },
+      // { data: { source: 'bonds', target: 'n7' } },
+      // { data: { source: 'bonds', target: 'n8' } },
+      // { data: { source: 'bonds', target: 'n9' } },
+      // { data: { source: 'bonds', target: 'n10' } },
+      { data: { source: 'compounds', target: 'n1' } },
+      { data: { source: 'compounds', target: 'n2' } },
+      { data: { source: 'compounds', target: 'n3' } },
+      { data: { source: 'compounds', target: 'n4' } },
+      { data: { source: 'compounds', target: 'n5' } },
+      { data: { source: 'compounds', target: 'n6' } },
+      { data: { source: 'compounds', target: 'n7' } },
+      { data: { source: 'compounds', target: 'n8' } },
+      { data: { source: 'compounds', target: 'n9' } },
+      { data: { source: 'compounds', target: 'n10' } },
+      // { data: { source: 'bonds', target: 'n11' } },
+      // { data: { source: 'bonds', target: 'n12' } },
+      // { data: { source: 'bonds', target: 'n13' } },
+      // { data: { source: 'bonds', target: 'n14' } },
+      // { data: { source: 'bonds', target: 'n15' } },
+      // { data: { source: 'bonds', target: 'n16' } },
+      // { data: { source: 'bonds', target: 'n17' } },
+      // { data: { source: 'bonds', target: 'n18' } },
+      // { data: { source: 'bonds', target: 'n19' } },
+      // { data: { source: 'bonds', target: 'n20' } },
+      { data: { source: 'compounds', target: 'n11' } },
+      { data: { source: 'compounds', target: 'n12' } },
+      { data: { source: 'compounds', target: 'n13' } },
+      { data: { source: 'compounds', target: 'n14' } },
+      { data: { source: 'compounds', target: 'n15' } },
+      { data: { source: 'compounds', target: 'n16' } },
+      { data: { source: 'compounds', target: 'n17' } },
+      { data: { source: 'compounds', target: 'n18' } },
+      { data: { source: 'compounds', target: 'n19' } },
+      { data: { source: 'compounds', target: 'n20' } },
+      // { data: { source: 'bonds', target: 'n21' } },
+      // { data: { source: 'bonds', target: 'n22' } },
+      // { data: { source: 'bonds', target: 'n23' } },
+      // { data: { source: 'bonds', target: 'n24' } },
+      // { data: { source: 'bonds', target: 'n25' } },
+      // { data: { source: 'bonds', target: 'n26' } },
+      // { data: { source: 'bonds', target: 'n27' } },
+      // { data: { source: 'bonds', target: 'n28' } },
+      // { data: { source: 'bonds', target: 'n29' } },
+      // { data: { source: 'bonds', target: 'n30' } },
+      { data: { source: 'compounds', target: 'n21' } },
+      { data: { source: 'compounds', target: 'n22' } },
+      { data: { source: 'compounds', target: 'n23' } },
+      { data: { source: 'compounds', target: 'n24' } },
+      { data: { source: 'compounds', target: 'n25' } },
+      { data: { source: 'compounds', target: 'n26' } },
+      { data: { source: 'compounds', target: 'n27' } },
+      { data: { source: 'compounds', target: 'n28' } },
+      { data: { source: 'compounds', target: 'n29' } },
+      { data: { source: 'compounds', target: 'n30' } },
+      // { data: { source: 'bonds', target: 'n31' } },
+      // { data: { source: 'bonds', target: 'n32' } },
+      // { data: { source: 'bonds', target: 'n33' } },
+      // { data: { source: 'bonds', target: 'n34' } },
+      // { data: { source: 'bonds', target: 'n35' } },
+      // { data: { source: 'bonds', target: 'n36' } },
+      // { data: { source: 'bonds', target: 'n37' } },
+      // { data: { source: 'bonds', target: 'n38' } },
+      // { data: { source: 'bonds', target: 'n39' } },
+      // { data: { source: 'bonds', target: 'n40' } },
+      { data: { source: 'compounds', target: 'n31' } },
+      { data: { source: 'compounds', target: 'n32' } },
+      { data: { source: 'compounds', target: 'n33' } },
+      { data: { source: 'compounds', target: 'n34' } },
+      { data: { source: 'compounds', target: 'n35' } },
+      { data: { source: 'compounds', target: 'n36' } },
+      { data: { source: 'compounds', target: 'n37' } },
+      { data: { source: 'compounds', target: 'n38' } },
+      { data: { source: 'compounds', target: 'n39' } },
+      { data: { source: 'compounds', target: 'n40' } },
+      // { data: { source: 'bonds', target: 'n41' } },
+      // { data: { source: 'bonds', target: 'n42' } },
+      // { data: { source: 'bonds', target: 'n43' } },
+      // { data: { source: 'bonds', target: 'n44' } },
+      // { data: { source: 'bonds', target: 'n45' } },
+      // { data: { source: 'bonds', target: 'n46' } },
+      // { data: { source: 'bonds', target: 'n47' } },
+      // { data: { source: 'bonds', target: 'n48' } },
+      // { data: { source: 'bonds', target: 'n49' } },
+      // { data: { source: 'bonds', target: 'n50' } },
+      { data: { source: 'compounds', target: 'n41' } },
+      { data: { source: 'compounds', target: 'n42' } },
+      { data: { source: 'compounds', target: 'n43' } },
+      { data: { source: 'compounds', target: 'n44' } },
+      { data: { source: 'compounds', target: 'n45' } },
+      { data: { source: 'compounds', target: 'n46' } },
+      { data: { source: 'compounds', target: 'n47' } },
+      { data: { source: 'compounds', target: 'n48' } },
+      { data: { source: 'compounds', target: 'n49' } },
+      { data: { source: 'compounds', target: 'n50' } },
+      // { data: { source: 'bonds', target: 'n51' } },
+      // { data: { source: 'bonds', target: 'n52' } },
+      // { data: { source: 'bonds', target: 'n53' } },
+      // { data: { source: 'bonds', target: 'n54' } },
+      // { data: { source: 'bonds', target: 'n55' } },
+      // { data: { source: 'bonds', target: 'n56' } },
+      // { data: { source: 'bonds', target: 'n57' } },
+      // { data: { source: 'bonds', target: 'n58' } },
+      // { data: { source: 'bonds', target: 'n59' } },
+      // { data: { source: 'bonds', target: 'n60' } },
+      { data: { source: 'compounds', target: 'n51' } },
+      { data: { source: 'compounds', target: 'n52' } },
+      { data: { source: 'compounds', target: 'n53' } },
+      { data: { source: 'compounds', target: 'n54' } },
+      { data: { source: 'compounds', target: 'n55' } },
+      { data: { source: 'compounds', target: 'n56' } },
+      { data: { source: 'compounds', target: 'n57' } },
+      { data: { source: 'compounds', target: 'n58' } },
+      { data: { source: 'compounds', target: 'n59' } },
+      { data: { source: 'compounds', target: 'n60' } },
+      // { data: { source: 'bonds', target: 'n61' } },
+      // { data: { source: 'bonds', target: 'n62' } },
+      { data: { source: 'compounds', target: 'n61' } },
+      { data: { source: 'compounds', target: 'n62' } }
     ]
   },
   
   layout: {
     name: 'cose',
+    directed: true,
     padding: 10
-  },
-  ready: function(){
-    window.cy1 = this;
-    
-    // giddy up
   }
-});
-// you can use qtip's regular options
-// see http://qtip2.com/
-cy1.$('#c').qtip({
-  content: 'Compound<br />\nAtom',
-  position: {
-    my: 'top center',
-    at: 'bottom center'
-  },
-  style: {
-    classes: 'qtip-bootstrap',
-    tip: {
-      width: 16,
-      height: 8
-    }
-  }
-});
-
-for (i = 1; i < 64; i++) { 
-    num = '#n'+i;
-
-cy1.$(num).qtip({
-  content: 'Atom',
-  position: {
-    my: 'top center',
-    at: 'bottom center'
-  },
-  style: {
-    classes: 'qtip-bootstrap',
-    tip: {
-      width: 16,
-      height: 8
-    }
-  }
-});
-}
- 
-cy1.$('#b').qtip({
-  content: 'Bond<br />\nAtom<br />\nAtom<br />\nType1<br />\nType2<br />\nType3',
-  position: {
-    my: 'top center',
-    at: 'bottom center'
-  },
-  style: {
-    classes: 'qtip-bootstrap',
-    tip: {
-      width: 16,
-      height: 8
-    }
-  }
-});
- 
-for (i = 1; i < 13; i++) { 
-    num = '#p'+i;
-
-cy1.$(num).qtip({
-  content: 'Atom',
-  position: {
-    my: 'top center',
-    at: 'bottom center'
-  },
-  style: {
-    classes: 'qtip-bootstrap',
-    tip: {
-      width: 16,
-      height: 8
-    }
-  }
-});
-}
+}); // cy init
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
       var target = $(e.target).attr("href") // activated tab
       if (target == "#compareTab") {
-        cy1.resize(); 
-        cy1.layout({
+        cy.resize(); 
+        cy.layout({
           name: 'cose',
+          directed: true,
           padding: 10
         });
       }
-    }); 
+    });
+  
 
 }); // on dom ready

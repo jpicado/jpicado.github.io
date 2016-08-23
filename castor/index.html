@@ -52,8 +52,7 @@
           <div id="compareTab" class="tab-pane fade in  ">
             <!-- db info -->
             <div class="col-md-12 text-center databaseInfoDiv">
-              <h5 data-toggle="tooltip" title="Structural information about chemical compounds.">HIV database</h5>
-              <h5 data-toggle="tooltip" title="Identify structural pattern of compounds with anti-HIV activity.">Target relation: hivActive(compound)</h5>
+              <h5 class="">HIV database:<br>Structural information about chemical compounds.</h5>
             </div>
             <!-- /db info -->
 
@@ -71,7 +70,7 @@
                     <img id="compareSchema1Picture" src="images/placeholder.png"/>
                   </div-->
                   <div class="schemaPicture col-md-12">
-                    <div id="cy1" ></div>
+                    <div id="compareTabSchema1" ></div>
                   </div>
                 </div>
                 <div class="col-md-6">
@@ -83,15 +82,26 @@
                     <img id="compareSchema2Picture" src="images/placeholder.png"/>
                   </div-->
                   <div class="schemaPicture col-md-12">
-                    <div id="cy2" ></div>
+                    <div id="compareTabSchema2" ></div>
                   </div>
                 </div>
               </div>
               <!-- /schemas -->
 
               <!-- results compare -->
+
               <div id="resultsDiv" class="col-md-12">
-                <ul class="nav nav-tabs default-primary-color roundedTopCorners">
+                <label for="select" class="col-md-6 control-label"><h5>Compare schema independence for target relation:</h5></label>
+                <div class="col-md-6">
+                  <select class="form-control" id="select">
+                    <option>hivActive(compound)</option>
+                  </select>
+                </div>
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                  <p>Description: Compound has anti-HIV activity.</p>
+                </div>
+                <ul class="nav nav-tabs default-primary-color roundedTopCorners col-md-12">
                   <li class="active"><a data-toggle="tab" href="#datalogTab">Definitions</a></li>
                   <li><a data-toggle="tab" href="#statisticsTab">Effectiveness</a></li>
                   <!--<li><a data-toggle="tab" href="#graphicalTab">Graphical</a></li>-->
@@ -272,8 +282,7 @@
               <div id="learnTab" class="tab-pane fade in active">
                 <!-- db info -->
                 <div class="col-md-12 text-center databaseInfoDiv">
-                  <h5 class="">HIV database</h5>
-                  <h6 class="">Target: hivActive(compound)</h6>
+                  <h5 class="">HIV database:<br>Structural information about chemical compounds.</h5>
                 </div>
                 <!-- /db info -->
 
@@ -287,26 +296,37 @@
                         <h5 id="learnSchemaTitle">Original Schema</h5>
                         <p id="learnSchemaInfo">80 relations, 86 attributes</p>
                       </div>
-                      <div class="schemaPicture">
-                        <img id="learnSchemaPicture" src="images/placeholder.png"/>
+                      <div class="schemaPicture col-md-12">
+                        <div id="learnTabSchema1" ></div>
                       </div>
                     </div>
                     <div class="col-md-6">
                       <div class="schemaInfo col-md-12">
                         <h5>Training data</h5>
-                        <p id="learnTrainingExamplesInfo">100 positive, 200 negative examples</p>
+                        <label for="select" class="col-md-4 control-label">Target relation:</label>
+                        <div class="col-md-8">
+                          <select class="form-control" id="select">
+                            <option>hivActive(compound)</option>
+                          </select>
+                        </div>
+                        <div class="col-md-12">
+                          <p>Description: Compound has anti-HIV activity.</p>
+                          <p># positive examples: 40</p>
+                          <p># negative examples: 80</p>  
+                        </div>
+                        
                       </div>
                       <div class="col-md-12" id="trainingExamplesDiv">
                         <div class="col-md-6">
-                          <p>Positive examples</p>
+                          <p>Positive examples:</p>
                           <div class="bordered roundedCorners">
-                            <textarea readonly class="form-control examplesArea" rows="6" id="">compound1&#13;compound2&#13;compound3&#13;compound4&#13;compound5</textarea>
+                            <textarea readonly class="form-control examplesArea" rows="5" id="learnTabPositiveTrainingExamples"></textarea>
                           </div>
                         </div>
                         <div class="col-md-6">
-                          <p>Negative examples</p>
+                          <p>Negative examples:</p>
                           <div class="bordered roundedCorners">
-                            <textarea readonly class="form-control examplesArea" rows="6" id="">compound11&#13;compound12&#13;compound13&#13;compound14&#13;compound15</textarea>
+                            <textarea readonly class="form-control examplesArea" rows="5" id="learnTabNegativeTrainingExamples"></textarea>
                           </div>
                         </div>
                       </div>
@@ -427,10 +447,11 @@
     <script type="text/javascript" src="js/compareTabFunctions.js"></script>
     <script type="text/javascript" src="js/learnTabFunctions.js"></script>
 
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.js"></script>
     <link href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-qtip/2.2.5/cytoscape-qtip.js"></script>
+    <script src="https://cdn.rawgit.com/cytoscape/cytoscape.js-qtip/2.2.5/cytoscape-qtip.js"></script>-->
     <script src="schemas/hiv1/code.js"></script>
+    <script src="schemas/hiv1/code-learn.js"></script>
     <script src="schemas/hiv2/code.js"></script>
 
   </body>

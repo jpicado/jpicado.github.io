@@ -1,0 +1,23 @@
+{
+  "algorithm": "Castor",
+  "schema" : "Original",
+  "accuracy": 0.93,
+  "precision": 0.70,
+  "recall": 0.88,
+  "f1": 0.77,
+  "time": 16147.952,
+  "definition": [
+    {
+    	"head": "hivActive(v0)",
+    	"body": [
+        "bonds(v12,v1,v6)", "bondtype_3(v25,0)", "bondtype_1(v22,1)", "bondtype_3(v11,0)", "bondtype_2(v27,0)", "bondtype_2(v17,0)", "bondtype_2(v30,0)", "compounds(v0,v9)", "compounds(v0,v7)", "compounds(v0,v6)", "bondtype_1(v25,1)", "compounds(v0,v5)", "element_c(v4)", "element_c(v5)", "element_c(v6)", "element_c(v7)", "bonds(v11,v1,v2)", "compounds(v0,v4)", "bondtype_3(v29,0)", "compounds(v0,v3)", "bonds(v29,v7,v9)", "compounds(v0,v2)", "bondtype_3(v22,0)", "compounds(v0,v1)", "bondtype_2(v11,0)", "bondtype_3(v12,0)", "bonds(v22,v3,v4)", "p2_1(v9)", "p2_1(v4)", "bondtype_1(v12,1)", "element_c(v1)", "p2_1(v5)", "bondtype_1(v29,1)", "element_c(v2)", "p2_1(v6)", "p2_1(v7)", "p2_1(v1)", "p2_1(v2)", "p2_1(v3)", "bondtype_2(v29,0)", "bondtype_1(v17,1)", "bonds(v27,v6,v7)", "bonds(v25,v4,v5)", "bondtype_2(v12,0)", "bondtype_1(v27,1)", "bondtype_2(v22,0)", "bondtype_1(v30,1)", "bondtype_2(v25,0)", "compounds(v0,v10)", "bonds(v17,v2,v3)", "element_o(v9)", "p2_1(v10)", "bondtype_1(v11,1)", "bondtype_3(v27,0)", "bondtype_3(v17,0)", "element_c(v10)", "bonds(v30,v9,v10)", "bondtype_3(v30,0)"
+      ]
+    },
+    {
+    	"head": "hivActive(v0)",
+		  "body": [
+        "bonds(v12,v1,v5)", "bondtype_3(v25,0)", "bondtype_1(v22,1)", "bondtype_3(v18,0)", "bondtype_2(v27,0)", "bondtype_3(v11,0)", "compounds(v0,v9)", "element_n(v4)", "compounds(v0,v8)", "compounds(v0,v7)", "compounds(v0,v6)", "compounds(v0,v5)", "bondtype_1(v12,0)", "bondtype_1(v18,1)", "bonds(v26,v6,v8)", "bondtype_2(v18,0)", "element_c(v9)", "bondtype_3(v19,0)", "element_c(v5)", "element_c(v6)", "bonds(v11,v1,v2)", "compounds(v0,v4)", "compounds(v0,v3)", "compounds(v0,v2)", "bondtype_3(v22,0)", "bondtype_1(v26,1)", "compounds(v0,v1)", "bondtype_1(v16,1)", "bondtype_2(v11,0)", "bondtype_3(v12,0)", "bonds(v25,v6,v7)", "p2_1(v8)", "p2_1(v9)", "p2_1(v4)", "element_c(v1)", "p2_1(v5)", "element_c(v2)", "p2_1(v6)", "element_c(v3)", "p2_1(v7)", "p2_1(v1)", "p2_1(v2)", "bondtype_3(v15,0)", "bonds(v27,v8,v9)", "p2_1(v3)", "bondtype_1(v19,1)", "bondtype_2(v19,0)", "bonds(v22,v4,v5)", "bondtype_1(v27,1)", "bonds(v19,v3,v6)", "bondtype_2(v22,0)", "bonds(v23,v5,v24)", "bondtype_3(v23,0)", "bonds(v15,v2,v3)", "bondtype_3(v16,0)", "bondtype_1(v23,1)", "bondtype_3(v26,0)", "bondtype_2(v12,1)", "bonds(v18,v3,v4)", "element_o(v8)", "bondtype_2(v23,0)", "bondtype_1(v11,1)", "bondtype_1(v15,0)", "bondtype_2(v16,0)", "bondtype_2(v15,1)", "bondtype_2(v26,0)", "bondtype_3(v27,0)", "bondtype_1(v25,0)", "bonds(v16,v2,v17)", "element_o(v7)", "bondtype_2(v25,1)"
+      ]
+    }
+  ]
+}

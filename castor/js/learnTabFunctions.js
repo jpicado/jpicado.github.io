@@ -1,4 +1,23 @@
 
+
+$( document ).ready(function() {
+	$("#learnResultsDiv").hide();
+	$.ajax({
+		url : "data/hiv-small/hiv_active_train_pos.csv",
+		dataType: "text",
+		success : function (data) {
+			$("#learnTabPositiveTrainingExamples").text(data);
+       	}
+	});
+	$.ajax({
+		url : "data/hiv-small/hiv_active_train_neg.csv",
+		dataType: "text",
+		success : function (data) {
+			$("#learnTabNegativeTrainingExamples").text(data);
+       	}
+	});
+});
+
 const SERVER_ADDRESS = "http://localhost:8080/CastorService/";
 
 var learnButtonElement = document.getElementById('learnButton');

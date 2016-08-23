@@ -39,5 +39,5 @@ function loadHIVDataset() {
 }
 
 function loadIMDbDataset() {
-	alert('Load IMDb');
+	alert('IMDb dataset not available yet.');
 }

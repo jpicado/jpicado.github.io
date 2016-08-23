@@ -1,0 +1,23 @@
+{
+  "algorithm": "Castor",
+  "schema" : "4NF",
+  "accuracy": 0.93,
+  "precision": 0.70,
+  "recall": 0.88,
+  "f1": 0.77,
+  "time": 9399.614,
+  "definition": [
+    {
+    	"head": "hivActive(v0)",
+    	"body": [
+        "bonds(v12,v1,v6,1,0,0)", "bonds(v17,v2,v3,1,0,0)", "compounds(v0,v9)", "compounds(v0,v7)", "compounds(v0,v6)", "compounds(v0,v5)", "bonds(v25,v4,v5,1,0,0)", "compounds(v0,v10)", "element_c(v4)", "element_c(v5)", "element_o(v9)", "p2_1(v10)", "element_c(v6)", "element_c(v7)", "compounds(v0,v4)", "compounds(v0,v3)", "compounds(v0,v2)", "bonds(v27,v6,v7,1,0,0)", "compounds(v0,v1)", "p2_1(v9)", "bonds(v22,v3,v4,1,0,0)", "element_c(v10)", "bonds(v29,v7,v9,1,0,0)", "p2_1(v4)", "element_c(v1)", "p2_1(v5)", "element_c(v2)", "p2_1(v6)", "p2_1(v7)", "bonds(v11,v1,v2,1,0,0)", "p2_1(v1)", "bonds(v30,v9,v10,1,0,0)", "p2_1(v2)", "p2_1(v3)"
+      ]
+    },
+    {
+    	"head": "hivActive(v0)",
+		  "body": [
+        "bonds(v16,v2,v17,1,0,0)", "bonds(v15,v2,v3,0,1,0)", "bonds(v25,v6,v7,0,1,0)", "compounds(v0,v9)", "element_n(v4)", "compounds(v0,v8)", "compounds(v0,v7)", "compounds(v0,v6)", "compounds(v0,v5)", "bonds(v27,v8,v9,1,0,0)", "bonds(v22,v4,v5,1,0,0)", "element_c(v9)", "bonds(v18,v3,v4,1,0,0)", "element_o(v8)", "bonds(v23,v5,v24,1,0,0)", "element_c(v5)", "element_c(v6)", "compounds(v0,v4)", "compounds(v0,v3)", "compounds(v0,v2)", "compounds(v0,v1)", "bonds(v26,v6,v8,1,0,0)", "p2_1(v8)", "p2_1(v9)", "p2_1(v4)", "bonds(v19,v3,v6,1,0,0)", "element_c(v1)", "p2_1(v5)", "element_c(v2)", "p2_1(v6)", "element_c(v3)", "element_o(v7)", "p2_1(v7)", "bonds(v11,v1,v2,1,0,0)", "bonds(v12,v1,v5,0,1,0)", "p2_1(v1)", "p2_1(v2)", "p2_1(v3)"
+      ]
+    }
+  ]
+}
