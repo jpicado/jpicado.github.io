@@ -22,37 +22,40 @@ var cy = cytoscape({
         'width': 1,
         'line-color': '#ffaaaa',
         'target-arrow-color': '#ffaaaa',
+        'target-arrow-shape': 'circle',
+        'source-arrow-shape': 'circle',
+        'source-arrow-color': '#ffaaaa',
         'curve-style': 'bezier'
       })
     .selector('#compounds')
       .css({
    'height': 30,
    'width': 40,
-        'background-image': 'http://i.imgur.com/ye1z3SG.png'
+        'background-image': 'http://i.imgur.com/uRlyXKQ.png'
       })
     .selector('#bonds')
       .css({
-   'height': 35,
-   'width': 27.5,
-        'background-image': 'http://i.imgur.com/xKLdQ0U.png'
+   'height': 105,
+   'width': 82.5,
+        'background-image': 'http://i.imgur.com/hePpzEF.png'
       })
     .selector('#bondtypes1')
       .css({
-   'height': 30,
-   'width': 42.5,
-        'background-image': 'http://i.imgur.com/21yXeRg.png'
+   'height': 90,
+   'width': 127.5,
+        'background-image': 'http://i.imgur.com/ABZanS6.png'
       })
   .selector('#bondtypes2')
       .css({
-   'height': 30,
-   'width': 42.5,
-        'background-image': 'http://i.imgur.com/7nECSpx.png'
+   'height': 90,
+   'width': 127.5,
+        'background-image': 'http://i.imgur.com/GRQ3tnG.png'
       })
   .selector('#bondtypes3')
       .css({
-   'height': 30,
-   'width': 42.5,
-        'background-image': 'http://i.imgur.com/Zxehuom.png'
+   'height': 90,
+   'width': 127.5,
+        'background-image': 'http://i.imgur.com/WlU5J05.png'
       })
   .selector('#n1')
       .css({

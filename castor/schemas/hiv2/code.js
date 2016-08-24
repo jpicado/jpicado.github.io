@@ -22,19 +22,22 @@ var cy = cytoscape({
         'width': 1,
         'line-color': '#ffaaaa',
         'target-arrow-color': '#ffaaaa',
+        'target-arrow-shape': 'circle',
+        'source-arrow-shape': 'circle',
+        'source-arrow-color': '#ffaaaa',
         'curve-style': 'bezier'
       })
     .selector('#compounds')
       .css({
    'height': 30,
    'width': 40,
-        'background-image': 'http://i.imgur.com/ye1z3SG.png'
+        'background-image': 'http://i.imgur.com/uRlyXKQ.png'
       })
     .selector('#bonds')
       .css({
-   'height': 35,
-   'width': 16,
-        'background-image': 'http://i.imgur.com/KKhXkft.png'
+   'height': 148.5,
+   'width': 72,
+        'background-image': 'http://i.imgur.com/cw1bMHj.png'
       })
     
   .selector('#n1')
