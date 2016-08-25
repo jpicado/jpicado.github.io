@@ -1,0 +1,30 @@
+[Rule 6] [Pos cover = 647 Neg cover = 145]
+hiv_active(A) :-
+   compounds(A,B), element_C(B), p2_1(B), bonds(C,B,D,1,0,0), 
+   element_C(D), bonds(E,D,F,1,0,0), element_O(F), bonds(G,F,H,1,0,0), 
+   element_C(H), bonds(I,H,J,0,1,0).
+
+[Rule 9] [Pos cover = 808 Neg cover = 88]
+hiv_active(A) :-
+   compounds(A,B), element_O(B), bonds(C,B,D,1,0,0), bonds(E,D,F,0,1,0), 
+   element_O(F), p2_1(F), bonds(G,B,H,1,0,0), element_C(H), 
+   p2_1(H), compounds(A,D), element_C(D).
+
+[Rule 53] [Pos cover = 39 Neg cover = 9]
+hiv_active(A) :-
+   compounds(A,B), bonds(C,B,D,0,1,0), element_O(D), bonds(E,B,F,1,0,0), 
+   element_N(F), bonds(G,F,H,1,0,0), element_H(H), p2_1(H), 
+   bonds(I,B,J,1,0,0), element_O(J).
+
+[Rule 98] [Pos cover = 197 Neg cover = 45]
+hiv_active(A) :-
+   compounds(A,B), bonds(C,B,D,0,1,0), element_N(D), p2_1(D), 
+   compounds(A,E), element_C(E), bonds(F,E,G,0,1,0), element_O(G), 
+   bonds(H,E,I,1,0,0), element_O(I), bonds(J,I,K,1,0,0), element_C(K).
+
+[Rule 262] [Pos cover = 883 Neg cover = 50]
+hiv_active(A) :-
+   compounds(A,B), bonds(C,B,D,0,1,0), element_O(D), bonds(E,B,F,1,0,0), 
+   element_O(F), p2_1(F), bonds(G,F,H,1,0,0), bonds(I,H,J,1,0,0), 
+   element_C(J), p2_1(J), bonds(K,J,L,1,0,0), p2_1(L), 
+   bonds(M,J,N,1,0,0), element_H(N).

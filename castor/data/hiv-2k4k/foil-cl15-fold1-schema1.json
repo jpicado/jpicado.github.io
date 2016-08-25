@@ -1,0 +1,17 @@
+{
+  "algorithm": "FOIL",
+  "schema" : "Original",
+  "accuracy": 0.82,
+  "precision": 0.70,
+  "recall": 0.79,
+  "f1": 0.74,
+  "time": 403.0394,
+  "definition": [
+    {
+    	"head": "hivActive(A)",
+    	"body": [
+        	"compounds(A,B)", "element_O(B)", "bonds(C,B,D)", "element_C(D)", "bonds(E,D,F)", "element_O(F)"
+      ]
+    }
+  ]
+}

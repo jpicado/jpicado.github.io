@@ -47,7 +47,8 @@ function learn() {
 		// Show effectiveness
 		$("#learnEffectiveness-precision").html(formatNumber(data.precision));
 		$("#learnEffectiveness-recall").html(formatNumber(data.recall));
-		$("#learnEffectiveness-time").html(formatNumber(data.time)+" s");
+		$("#learnEffectiveness-f1").html(formatNumber(data.f1));
+		$("#learnEffectiveness-time").html(formatNumber(data.time));
 
 	}).fail(function() {
 		alert("An error occurred.");

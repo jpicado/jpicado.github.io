@@ -1,0 +1,155 @@
+{
+  "algorithm": "Castor",
+  "schema" : "4NF",
+  "accuracy": 0.88,
+  "precision": 0.79,
+  "recall": 0.89,
+  "f1": 0.84,
+  "time": 636.640,
+  "definition": [
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V25,V5,V6,0,1,0)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V27,V8,V9,1,0,0)", "bonds(V22,V4,V5,1,0,0)", "element_c(V8)", "element_c(V9)", "element_c(V4)", "element_c(V5)", "bonds(V12,V1,V13,0,1,0)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V20,V3,V21,1,0,0)", "p2_1(V8)", "p2_1(V9)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_o(V6)", "p2_1(V6)", "bonds(V16,V2,V3,1,0,0)", "element_c(V3)", "element_o(V7)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "bonds(V26,V7,V8,1,0,0)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V24,V4,V6,1,0,0)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "element_c(V8)", "compounds(V0,V10)", "element_c(V4)", "p2_1(V10)", "element_c(V6)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V12,V1,V3,1,0,0)", "bonds(V25,V7,V8,1,0,0)", "bonds(V27,V8,V10,1,0,0)", "bonds(V23,V4,V5,0,1,0)", "p2_1(V8)", "element_c(V10)", "p2_1(V4)", "element_c(V1)", "element_o(V5)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "element_o(V7)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "element_o(V3)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V19,V4,V5,1,0,0)", "bonds(V12,V1,V6,1,0,0)", "bonds(V11,V1,V2,0,1,0)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V13,V1,V8,1,0,0)", "bonds(V17,V3,V4,1,0,0)", "bonds(V21,V5,V9,0,1,0)", "bonds(V18,V3,V7,0,1,0)", "element_c(V8)", "compounds(V0,V10)", "bonds(V14,V2,V3,1,0,0)", "element_c(V4)", "element_c(V5)", "element_o(V9)", "p2_1(V10)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V20,V4,V10,0,1,0)", "p2_1(V8)", "p2_1(V9)", "element_c(V10)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_c(V2)", "element_o(V6)", "p2_1(V6)", "element_c(V3)", "element_o(V7)", "p2_1(V7)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "element_n(V1)", "bonds(V15,V2,V4,1,0,0)", "bonds(V18,V3,V7,1,0,0)", "compounds(V0,V8)", "bonds(V16,V2,V5,0,1,0)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "element_c(V8)", "compounds(V0,V10)", "p2_1(V10)", "element_c(V6)", "element_c(V7)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V17,V3,V6,0,1,0)", "bonds(V23,V7,V10,0,1,0)", "bonds(V12,V1,V3,1,0,0)", "bonds(V19,V4,V8,1,0,0)", "p2_1(V8)", "element_c(V10)", "element_o(V4)", "p2_1(V4)", "element_o(V5)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "element_c(V3)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "compounds(V0,V9)", "bonds(V26,V8,V9,1,0,0)", "compounds(V0,V8)", "compounds(V0,V7)", "bonds(V24,V6,V7,1,0,0)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V13,V1,V6,1,0,0)", "element_n(V8)", "element_c(V9)", "bonds(V12,V1,V5,1,0,0)", "element_c(V5)", "element_c(V6)", "element_c(V7)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "p2_1(V8)", "p2_1(V9)", "element_c(V1)", "p2_1(V5)", "bonds(V17,V3,V18,0,1,0)", "p2_1(V6)", "element_c(V3)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "bonds(V15,V2,V3,1,0,0)", "bonds(V22,V5,V23,1,0,0)", "p2_1(V1)", "element_o(V2)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V19,V2,V20,1,0,0)", "bonds(V14,V1,V5,1,0,0)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V25,V3,V26,1,0,0)", "element_n(V8)", "bonds(V27,V5,V6,1,0,0)", "element_c(V6)", "bonds(V29,V6,V8,1,0,0)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V12,V1,V3,1,0,0)", "p2_1(V8)", "bonds(V28,V6,V7,0,1,0)", "element_c(V1)", "element_o(V5)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "element_c(V3)", "element_o(V7)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V23,V4,V5,1,0,0)", "element_n(V2)", "compounds(V0,V6)", "compounds(V0,V5)", "compounds(V0,V10)", "bonds(V12,V1,V5,1,0,0)", "bonds(V13,V1,V6,0,1,0)", "element_c(V4)", "p2_1(V10)", "compounds(V0,V4)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V20,V4,V10,1,0,0)", "element_c(V10)", "p2_1(V4)", "element_c(V1)", "element_o(V5)", "p2_1(V5)", "element_o(V6)", "p2_1(V6)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V13,V2,V4,1,0,0)", "bonds(V11,V1,V2,0,1,0)", "element_n(V1)", "bonds(V19,V5,V10,1,0,0)", "element_n(V2)", "bonds(V14,V3,V5,1,0,0)", "compounds(V0,V5)", "compounds(V0,V10)", "element_c(V4)", "element_c(V5)", "p2_1(V10)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V12,V1,V3,1,0,0)", "element_c(V10)", "p2_1(V4)", "p2_1(V5)", "element_c(V3)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V26,V7,V9,1,0,0)", "bonds(V13,V2,V4,1,0,0)", "bonds(V11,V1,V2,0,1,0)", "element_n(V1)", "element_n(V3)", "compounds(V0,V9)", "compounds(V0,V7)", "element_o(V9)", "element_c(V7)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V12,V1,V3,1,0,0)", "p2_1(V9)", "element_o(V4)", "p2_1(V4)", "element_c(V2)", "p2_1(V7)", "bonds(V16,V3,V7,1,0,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V22,V3,V6,0,1,0)", "bonds(V23,V4,V5,1,0,0)", "bonds(V17,V2,V3,1,0,0)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V12,V1,V5,1,0,0)", "element_c(V5)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "element_o(V4)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_c(V2)", "element_o(V6)", "p2_1(V6)", "element_c(V3)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "bonds(V21,V3,V4,1,0,0)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V26,V7,V9,1,0,0)", "bonds(V22,V4,V23,1,0,0)", "bonds(V13,V2,V3,1,0,0)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V17,V3,V4,1,0,0)", "element_c(V9)", "compounds(V0,V10)", "element_o(V8)", "bonds(V24,V5,V6,1,0,0)", "bonds(V27,V9,V10,1,0,0)", "element_c(V5)", "p2_1(V10)", "element_c(V7)", "bonds(V14,V2,V5,1,0,0)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "p2_1(V8)", "p2_1(V9)", "element_c(V10)", "bonds(V12,V1,V7,1,0,0)", "element_o(V4)", "p2_1(V4)", "p2_1(V5)", "element_c(V2)", "element_o(V6)", "p2_1(V6)", "element_c(V3)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "bonds(V25,V7,V8,0,1,0)", "element_o(V1)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V25,V9,V10,1,0,0)", "bonds(V23,V5,V7,0,1,0)", "bonds(V12,V1,V6,0,1,0)", "element_n(V2)", "bonds(V18,V3,V19,1,0,0)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "element_c(V8)", "bonds(V20,V4,V5,1,0,0)", "element_c(V9)", "compounds(V0,V10)", "element_c(V4)", "element_c(V5)", "p2_1(V10)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V16,V2,V8,1,0,0)", "bonds(V17,V3,V4,0,1,0)", "bonds(V24,V8,V9,1,0,0)", "p2_1(V8)", "p2_1(V9)", "element_c(V10)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_o(V6)", "p2_1(V6)", "element_c(V3)", "element_o(V7)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "bonds(V15,V2,V3,1,0,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V12,V1,V6,1,0,0)", "compounds(V0,V9)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V27,V5,V6,1,0,0)", "compounds(V0,V10)", "element_c(V4)", "element_c(V5)", "element_o(V9)", "p2_1(V10)", "element_c(V6)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V28,V6,V9,1,0,0)", "bonds(V26,V4,V5,1,0,0)", "p2_1(V9)", "element_c(V10)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "bonds(V16,V2,V3,1,0,0)", "bonds(V29,V9,V10,1,0,0)", "element_c(V3)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "bonds(V21,V3,V4,1,0,0)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V15,V3,V6,1,0,0)", "bonds(V13,V2,V4,1,0,0)", "bonds(V11,V1,V2,0,1,0)", "element_s(V8)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V12,V2,V3,1,0,0)", "element_c(V9)", "element_c(V5)", "bonds(V14,V3,V5,0,1,0)", "element_c(V6)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V18,V5,V9,1,0,0)", "p2_1(V8)", "p2_1(V9)", "element_o(V4)", "p2_1(V4)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "element_c(V3)", "element_o(V1)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V18,V3,V5,1,0,0)", "bonds(V11,V1,V2,0,1,0)", "bonds(V14,V1,V15,1,0,0)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "bonds(V23,V4,V6,0,1,0)", "compounds(V0,V5)", "bonds(V26,V5,V8,1,0,0)", "element_c(V8)", "element_c(V4)", "bonds(V24,V4,V7,1,0,0)", "element_c(V5)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V17,V2,V4,1,0,0)", "bonds(V25,V5,V7,1,0,0)", "p2_1(V8)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_c(V2)", "element_o(V6)", "p2_1(V6)", "bonds(V16,V2,V3,1,0,0)", "element_c(V3)", "element_o(V7)", "p2_1(V7)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V11,V1,V2,0,1,0)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "element_n(V5)", "element_n(V6)", "bonds(V13,V1,V6,1,0,0)", "element_n(V8)", "bonds(V15,V3,V5,1,0,0)", "bonds(V24,V4,V25,1,0,0)", "bonds(V12,V1,V5,1,0,0)", "element_c(V4)", "element_o(V9)", "element_c(V7)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V26,V6,V8,1,0,0)", "p2_1(V8)", "p2_1(V9)", "bonds(V27,V7,V8,1,0,0)", "bonds(V14,V3,V4,1,0,0)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "p2_1(V6)", "element_c(V3)", "p2_1(V7)", "p2_1(V1)", "bonds(V28,V7,V9,0,1,0)", "element_o(V2)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V16,V2,V10,1,0,0)", "bonds(V24,V7,V8,1,0,0)", "element_n(V1)", "element_n(V3)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V23,V5,V7,1,0,0)", "element_c(V8)", "element_c(V9)", "compounds(V0,V10)", "bonds(V25,V8,V9,1,0,0)", "element_c(V5)", "p2_1(V10)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "p2_1(V8)", "p2_1(V9)", "element_c(V10)", "p2_1(V5)", "element_c(V2)", "element_o(V6)", "p2_1(V6)", "bonds(V17,V3,V5,1,0,0)", "element_o(V7)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)", "bonds(V22,V5,V6,0,1,0)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "compounds(V0,V10)", "element_c(V4)", "element_c(V5)", "p2_1(V10)", "bonds(V13,V2,V3,0,1,0)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V12,V1,V4,1,0,0)", "bonds(V14,V2,V10,1,0,0)", "bonds(V15,V4,V5,1,0,0)", "compounds(V0,V5)", "p2_1(V4)", "p2_1(V5)", "element_c(V2)", "bonds(V11,V1,V2,1,0,0)", "element_o(V1)", "p2_1(V1)", "p2_1(V2)", "element_o(V3)", "element_n(V10)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V15,V3,V6,1,0,0)", "bonds(V13,V2,V4,1,0,0)", "bonds(V11,V1,V2,0,1,0)", "bonds(V14,V3,V5,1,0,0)", "compounds(V0,V9)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V12,V2,V3,1,0,0)", "element_c(V9)", "element_c(V5)", "element_c(V6)", "bonds(V20,V5,V9,1,0,0)", "element_c(V7)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V23,V6,V7,1,0,0)", "p2_1(V9)", "element_o(V4)", "p2_1(V4)", "p2_1(V5)", "bonds(V18,V4,V7,1,0,0)", "element_c(V2)", "p2_1(V6)", "element_c(V3)", "p2_1(V7)", "element_o(V1)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V18,V2,V6,1,0,0)", "bonds(V21,V4,V10,0,1,0)", "bonds(V17,V2,V3,0,1,0)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V22,V4,V5,1,0,0)", "compounds(V0,V10)", "bonds(V12,V1,V5,1,0,0)", "element_c(V4)", "p2_1(V10)", "element_c(V6)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V19,V3,V4,1,0,0)", "element_o(V10)", "p2_1(V4)", "element_c(V1)", "element_o(V5)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "element_c(V3)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V22,V4,V7,1,0,0)", "bonds(V13,V1,V9,0,1,0)", "bonds(V12,V1,V4,1,0,0)", "bonds(V24,V7,V8,1,0,0)", "compounds(V0,V9)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "element_c(V8)", "element_c(V9)", "bonds(V14,V2,V3,1,0,0)", "element_c(V4)", "element_c(V5)", "element_c(V6)", "element_c(V7)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V18,V3,V8,1,0,0)", "p2_1(V8)", "p2_1(V9)", "bonds(V21,V4,V6,1,0,0)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "bonds(V17,V3,V5,1,0,0)", "bonds(V23,V5,V6,1,0,0)", "element_c(V3)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "bonds(V15,V2,V16,0,1,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V25,V6,V7,1,0,0)", "bonds(V21,V4,V7,0,1,0)", "bonds(V22,V4,V23,1,0,0)", "bonds(V16,V2,V17,1,0,0)", "bonds(V15,V2,V3,0,1,0)", "bonds(V24,V5,V6,0,1,0)", "compounds(V0,V8)", "compounds(V0,V7)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V12,V1,V8,0,1,0)", "element_c(V8)", "bonds(V18,V3,V4,1,0,0)", "element_c(V4)", "element_c(V5)", "element_c(V6)", "element_c(V7)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "p2_1(V8)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "element_c(V2)", "p2_1(V6)", "element_c(V3)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "bonds(V26,V7,V8,1,0,0)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "bonds(V17,V2,V3,1,0,0)", "compounds(V0,V6)", "compounds(V0,V5)", "bonds(V12,V1,V5,1,0,0)", "element_c(V4)", "compounds(V0,V4)", "compounds(V0,V3)", "compounds(V0,V2)", "compounds(V0,V1)", "bonds(V26,V4,V5,1,0,0)", "bonds(V27,V4,V6,0,1,0)", "bonds(V22,V3,V4,1,0,0)", "p2_1(V4)", "element_c(V1)", "element_o(V5)", "p2_1(V5)", "element_c(V2)", "element_o(V6)", "p2_1(V6)", "element_c(V3)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "p2_1(V2)", "p2_1(V3)"
+      ]
+    },
+    {
+      "head": "hivActive(V0)",
+      "body": [
+        "compounds(V0,V7)", "bonds(V16,V5,V7,1,0,0)", "bonds(V13,V1,V4,0,1,0)", "compounds(V0,V5)", "compounds(V0,V10)", "element_c(V5)", "p2_1(V10)", "bonds(V14,V2,V5,1,0,0)", "element_c(V7)", "compounds(V0,V4)", "bonds(V25,V7,V10,1,0,0)", "compounds(V0,V2)", "compounds(V0,V1)", "element_cl(V10)", "element_o(V4)", "p2_1(V4)", "element_c(V1)", "p2_1(V5)", "p2_1(V7)", "bonds(V11,V1,V2,1,0,0)", "p2_1(V1)", "element_o(V2)", "p2_1(V2)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+[Rule 9] [Pos cover = 873 Neg cover = 208]
+hiv_active(A) :-
+   compounds(A,B), element_O(B), bonds(C,B,D), element_C(D), 
+   bonds(E,D,F), element_O(F).

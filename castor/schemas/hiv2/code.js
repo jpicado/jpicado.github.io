@@ -22,17 +22,25 @@ var cy = cytoscape({
         'width': 1,
         'line-color': '#ffaaaa',
         'target-arrow-color': '#ffaaaa',
-        'target-arrow-shape': 'circle',
-        'source-arrow-shape': 'circle',
-        'source-arrow-color': '#ffaaaa',
+        'target-arrow-shape': 'diamond',
         'curve-style': 'bezier'
       })
+         .selector('$node > node')
+      .css({
+        'background-color': '#C70066',
+      'background-opacity': 0.1
+      })
+   
     .selector('#compounds')
       .css({
    'height': 30,
    'width': 40,
-        'background-image': 'http://i.imgur.com/uRlyXKQ.png'
+        'background-image': 'http://i.imgur.com/9zsVNTg.jpg'
       })
+          .selector('#p1')
+      .css({
+      })
+
     .selector('#bonds')
       .css({
    'height': 148.5,
@@ -421,7 +429,7 @@ var cy = cytoscape({
   elements: {
     nodes: [
       { data: { id: 'compounds' } },
-      { data: { id: 'bonds' } },
+      { data: { id: 'bonds' , parent: 'p1'} },
       { data: { id: 'n1' } },
       { data: { id: 'n2' } },
       { data: { id: 'n3' } },
@@ -483,7 +491,8 @@ var cy = cytoscape({
       { data: { id: 'n59' } },
       { data: { id: 'n60' } },
       { data: { id: 'n61' } },
-      { data: { id: 'n62' } }
+      { data: { id: 'n62' } },
+            { data: { id: 'p1' } }
       
     ],
     edges: [

@@ -1,11 +1,12 @@
 
-function populateStatsForAlgorithmOnSchema(algorithmId,algorithmName,schemaTitleId,schemaTitle,precisionId,precision,recallId,recall,timeId,time) {
+function populateStatsForAlgorithmOnSchema(algorithmId,algorithmName,schemaTitleId,schemaTitle,precisionId,precision,recallId,recall,f1Id,f1,timeId,time) {
 	// Stats
 	$( algorithmId ).html(algorithmName);
-	$( schemaTitleId ).html(schemaTitle);
+	$( schemaTitleId ).html(schemaTitle+" Schema");
 	$( precisionId ).html(formatNumber(precision));
 	$( recallId ).html(formatNumber(recall));
-	$( timeId ).html(formatNumber(time)+" s");
+	$( f1Id ).html(formatNumber(f1));
+	$( timeId ).html(formatNumber(time/60));
 }
 
 function populateDatalogForAlgorithmOnSchema(algorithmId,algorithmName,schemaTitleId,schemaTitle,definitionId,definition) {

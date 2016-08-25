@@ -404,6 +404,8 @@ function createGraph(elementId) {
 			selector: 'node',
 			style: {
 				'background-color': 'black',
+				'border-width': 1,
+      			'border-color': 'black',
 				label: 'data(label)'
 			}
 		},

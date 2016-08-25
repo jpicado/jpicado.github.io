@@ -1,0 +1,51 @@
+hiv_active(A) :-
+   compounds(A,B), element_C(B), bonds(C,B,D,1,0,0), bonds(E,D,F,0,1,0), 
+   element_O(F), bonds(G,D,H,1,0,0), p2_1(H), bonds(I,H,J,1,0,0), 
+   element_C(J), bonds(K,J,L,1,0,0), element_H(L), bonds(M,H,N,1,0,0), 
+   bonds(O,N,P,1,0,0), element_C(P).
+
+[Rule 5] [Pos cover = 623 Neg cover = 45]
+hiv_active(A) :-
+   compounds(A,B), element_C(B), bonds(C,B,D,1,0,0), element_C(D), 
+   bonds(E,D,F,1,0,0), element_O(F), bonds(G,F,H,1,0,0), bonds(I,H,J,0,1,0), 
+   element_O(J), compounds(A,H), element_C(H).
+
+[Rule 12] [Pos cover = 443 Neg cover = 5]
+hiv_active(A) :-
+   compounds(A,B), element_C(B), bonds(C,B,D,1,0,0), element_O(D), 
+   bonds(E,D,F,1,0,0), bonds(G,F,H,0,1,0), element_O(H), bonds(I,B,J,1,0,0), 
+   element_C(J), bonds(K,J,L,1,0,0), element_H(L), compounds(A,F), 
+   element_C(F).
+
+[Rule 22] [Pos cover = 33 Neg cover = 4]
+hiv_active(A) :-
+   compounds(A,B), element_O(B), bonds(C,B,D,0,1,0), element_C(D), 
+   bonds(E,D,F,1,0,0), bonds(G,F,H,1,0,0), bonds(I,H,J,1,0,0), element_H(J), 
+   bonds(K,F,L,1,0,0), element_C(L), bonds(M,D,N,1,0,0), element_O(N), 
+   bonds(O,N,P,1,0,0), element_C(P).
+
+[Rule 23] [Pos cover = 48 Neg cover = 7]
+hiv_active(A) :-
+   compounds(A,B), element_O(B), bonds(C,B,D,1,0,0), bonds(E,D,F,0,1,0), 
+   element_O(F), bonds(G,B,H,1,0,0), element_C(H), bonds(I,H,J,1,0,0), 
+   element_C(J), bonds(K,J,L,1,0,0), element_H(L), bonds(M,H,N,1,0,0), 
+   element_H(N).
+
+[Rule 27] [Pos cover = 38 Neg cover = 6]
+hiv_active(A) :-
+   compounds(A,B), bonds(C,B,D,0,1,0), element_O(D), bonds(E,B,F,1,0,0), 
+   element_N(F), bonds(G,F,H,1,0,0), element_H(H), bonds(I,B,J,1,0,0), 
+   element_O(J), bonds(K,J,L,1,0,0), element_C(L).
+
+[Rule 59] [Pos cover = 92 Neg cover = 9]
+hiv_active(A) :-
+   compounds(A,B), element_O(B), bonds(C,B,D,1,0,0), bonds(E,D,F,0,1,0), 
+   element_O(F), bonds(G,D,H,1,0,0), element_N(H), bonds(I,H,J,1,0,0), 
+   element_H(J).
+
+[Rule 64] [Pos cover = 78 Neg cover = 12]
+hiv_active(A) :-
+   compounds(A,B), element_C(B), bonds(C,B,D,1,0,0), element_C(D), 
+   bonds(E,D,F,1,0,0), element_N(F), bonds(G,F,H,1,0,0), bonds(I,H,J,0,1,0), 
+   element_O(J), bonds(K,F,L,1,0,0), bonds(M,L,N,1,0,0), compounds(A,H), 
+   bonds(O,H,P,1,0,0), element_O(P).
