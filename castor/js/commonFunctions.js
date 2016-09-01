@@ -1,3 +1,7 @@
+elementNames = {
+	"H": "Hydrogen","He": "Helium","Li": "Lithium","Be": "Beryllium","B": "Boron","C": "Carbon","N": "Nitrogen","O": "Oxygen","F": "Fluorine","Ne": "Neon","Na": "Sodium","Mg": "Magnesium","Al": "Aluminum, Aluminium","Si": "Silicon","P": "Phosphorus","S": "Sulfur","Cl": "Chlorine","Ar": "Argon","K": "Potassium","Ca": "Calcium","Sc": "Scandium","Ti": "Titanium","V": "Vanadium","Cr": "Chromium","Mn": "Manganese","Fe": "Iron","Co": "Cobalt","Ni": "Nickel","Cu": "Copper","Zn": "Zinc","Ga": "Gallium","Ge": "Germanium","As": "Arsenic","Se": "Selenium","Br": "Bromine","Kr": "Krypton","Rb": "Rubidium","Sr": "Strontium","Y": "Yttrium","Zr": "Zirconium","Nb": "Niobium","Mo": "Molybdenum","Tc": "Technetium","Ru": "Ruthenium","Rh": "Rhodium","Pd": "Palladium","Ag": "Silver","Cd": "Cadmium","In": "Indium","Sn": "Tin","Sb": "Antimony","Te": "Tellurium","I": "Iodine","Xe": "Xenon","Cs": "Cesium","Ba": "Barium","La": "Lanthanum","Ce": "Cerium","Pr": "Praseodymium","Nd": "Neodymium","Pm": "Promethium","Sm": "Samarium","Eu": "Europium","Gd": "Gadolinium","Tb": "Terbium","Dy": "Dysprosium","Ho": "Holmium","Er": "Erbium","Tm": "Thulium","Yb": "Ytterbium","Lu": "Lutetium","Hf": "Hafnium","Ta": "Tantalum","W": "Tungsten","Re": "Rhenium","Os": "Osmium","Ir": "Iridium","Pt": "Platinum","Au": "Gold","Hg": "Mercury","Tl": "Thallium","Pb": "Lead","Bi": "Bismuth","Po": "Polonium","At": "Astatine","Rn": "Radon","Fr": "Francium","Ra": "Radium","Ac": "Actinium","Th": "Thorium","Pa": "Protactinium","U": "Uranium","Np": "Neptunium","Pu": "Plutonium","Am": "Americium","Cm": "Curium","Bk": "Berkelium","Cf": "Californium","Es": "Einsteinium","Fm": "Fermium","Md": "Mendelevium","No": "Nobelium","Lr": "Lawrencium","Rf": "Rutherfordium","Db": "Dubnium","Sg": "Seaborgium","Bh": "Bohrium","Hs": "Hassium","Mt": "Meitnerium","Ds": "Darmstadtium","Rg": "Roentgenium","Cn": "Copernicium","Uut": "Ununtrium","Fl": "Flerovium","Uup": "Ununpentium","Lv": "Livermorium","Uus": "Ununseptium","Uuo": "Ununoctium"
+}
+
 function formatNumber(number) {
 	return Math.round(number * 100) / 100
 }
@@ -23,7 +27,267 @@ function definitionToString(definitionJson) {
 	return definition;
 }
 
-function createGraphicalViewHIV(definitionJson, elementId, schema) {
+function clauseToStringHIV(clauseJson) {
+	var compoundPrefix = "comp";
+	var atomPrefix = "atom";
+	var bondPrefix = "bond";
+
+	// Head
+	var head = clauseJson.head.replace("hiv_active", "hivActive");
+	var compoundId = compoundPrefix;
+	head = "hivActive("+compoundId+")"
+
+	// Body
+	var body = bodyToStringHIV(clauseJson.body, compoundId, atomPrefix, bondPrefix);
+
+	var clause = head + " :- \n" + body + ".\n\n";
+	
+	return clause;
+}
+
+function definitionToStringHIV(definitionJson) {
+	var definition = "";
+	for (var i = 0; i < definitionJson.length; i++){
+		definition += clauseToStringHIV(definitionJson[i]);
+	}
+	return definition;
+}
+
+function bodyToStringHIV(bodyJson, compoundId, atomPrefix, bondPrefix) {
+	var atomCounter = 1;
+	var bondCounter = 1;
+
+	var atomVars = {};
+	var bondVars = {};
+
+	var body = "\t";
+	var addedAtoms = 0;
+	for (var j = 0; j < bodyJson.length; j++){
+		var atom = bodyJson[j];
+
+		var addAtom = true;
+		if (atom.startsWith("p2" || atom.startsWith("p3"))) {
+			addAtom = false;
+		} else if (atom.startsWith("compounds")) {
+			// Change predicate
+			var predicate = getPredicateOfAtom(atom);
+			predicate = predicate.replace("compounds", "Compounds");
+
+			// Change variable names
+			var tokens = atom.split("(");
+			var arguments = tokens[1].substring(0, tokens[1].length-1);
+
+			var terms = getTermsInAtom(atom);
+			var compoundVar = terms[0];
+			var atomVar = terms[1];
+
+			if (atomVar in atomVars) {
+				var newAtomVar = atomVars[atomVar];
+			} else {
+				var newAtomVar = atomPrefix+atomCounter;
+				atomCounter++;
+				atomVars[atomVar] = newAtomVar;
+			}
+			atom = predicate+"("+arguments.replace(compoundVar, compoundId).replace(atomVar, newAtomVar)+")";
+		} else if (atom.startsWith("element_")) {
+			// Change predicate
+			var predicate = getPredicateOfAtom(atom);
+			var elementSymbol = capitalizeFirstLetter(predicate.replace("element_",""));
+			var elementName = elementNames[elementSymbol];
+			predicate = elementName;
+
+			// Change variable names
+			var tokens = atom.split("(");
+			var arguments = tokens[1].substring(0, tokens[1].length-1);
+
+			var terms = getTermsInAtom(atom);
+			var atomVar = terms[0];
+			if (atomVar in atomVars) {
+				var newAtomVar = atomVars[atomVar];
+			} else {
+				var newAtomVar = atomPrefix+atomCounter;
+				atomCounter++;
+				atomVars[atomVar] = newAtomVar;
+			}
+			atom = predicate+"("+arguments.replace(atomVar, newAtomVar)+")";
+		}  else if(atom.startsWith("bonds")) {
+			// Change predicate
+			var predicate = getPredicateOfAtom(atom);
+			predicate = predicate.replace("bonds", "Bonds").replace("_", "");
+
+			// Change variable names
+			var tokens = atom.split("(");
+			var arguments = tokens[1].substring(0, tokens[1].length-1);
+
+			var terms = getTermsInAtom(atom);
+			var bondVar = terms[0];
+			var atom1Var = terms[1];
+			var atom2Var = terms[2];
+
+			// bond
+			if (bondVar in bondVars) {
+				var newBondVar = bondVars[bondVar];
+			} else {
+				var newBondVar = bondPrefix+bondCounter;
+				bondCounter++;
+				bondVars[bondVar] = newBondVar;
+			}
+			// atom1
+			if (atom1Var in atomVars) {
+				var newAtom1Var = atomVars[atom1Var];
+			} else {
+				var newAtom1Var = atomPrefix+atomCounter;
+				atomCounter++;
+				atomVars[atom1Var] = newAtom1Var;
+			}
+			// atom2
+			if (atom2Var in atomVars) {
+				var newAtom2Var = atomVars[atom2Var];
+			} else {
+				var newAtom2Var = atomPrefix+atomCounter;
+				atomCounter++;
+				atomVars[atom2Var] = newAtom2Var;
+			}
+
+			atom = predicate+"("+arguments.replace(bondVar, newBondVar).replace(atom1Var, newAtom1Var).replace(atom2Var, newAtom2Var)+")";
+		} else if(atom.startsWith("bondtype")) {
+			// Change predicate
+			var predicate = getPredicateOfAtom(atom);
+			predicate = predicate.replace("bondtype", "BondType").replace("_", "");
+
+			// Change variable names
+			var tokens = atom.split("(");
+			var arguments = tokens[1].substring(0, tokens[1].length-1);
+
+			var terms = getTermsInAtom(atom);
+			var bondVar = terms[0];
+			if (bondVar in bondVars) {
+				var newBondVar = bondVars[bondVar];
+			} else {
+				var newBondVar = bondPrefix+bondCounter;
+				bondCounter++;
+				bondVars[bondVar] = newBondVar;
+			}
+
+			atom = predicate+"("+arguments.replace(bondVar, newBondVar)+")";
+		}
+
+		if (addAtom) {
+			if (addedAtoms > 0) {
+				body += ", ";
+			}
+
+			// Add new line
+			if (addedAtoms > 0 && addedAtoms%3 == 0) {
+				body += "\n\t";
+			}
+
+			body += atom;
+			addedAtoms++;
+		}
+	}
+	return body;
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+function getPredicateOfAtom(atom) {
+	var tokens = atom.split("(");
+	var predicate = tokens[0];
+	return predicate;
+}
+
+function getTermsInAtom(atom) {
+	var tokens = atom.split("(");
+	var arguments = tokens[1].substring(0, tokens[1].length-1);
+
+	// Get terms in literal
+	var regex = /([^\"'][^,]*|\".+?\"|'.+?')[,\\s]*/g;
+	var match = regex.exec(arguments);
+
+	// Get terms in literal
+	var termsInAtom = [];
+	while (match != null) {
+		var term = match[1];
+		termsInAtom.push(term);
+		match = regex.exec(arguments);
+	}
+
+	return termsInAtom;
+}
+
+
+function createGraphicalViewForClauseHIV(clauseJson, elementId, schema, definitionNumber) {
+	document.getElementById(elementId).title = clauseToStringHIV(clauseJson);
+
+	var graph = createGraph(elementId);
+	var seenTerms = {};
+	
+	bonds = {}
+	bondTypes = {}
+
+	// For each body literal in definition
+	for (var j = 0; j < clauseJson.body.length; j++) {
+		var atom = clauseJson.body[j];
+
+		// Get predicate and terms
+		var predicate = getPredicateOfAtom(atom);
+
+		if (predicate == "compounds")
+			continue;
+
+		// Get terms in atom
+		var termsInAtom = getTermsInAtom(atom);
+
+		// Process terms
+		if (schema == 1) {
+			createGraphicalViewHIVAuxSchema1(graph, seenTerms, definitionNumber, predicate, termsInAtom, bonds, bondTypes);
+		} else {
+			createGraphicalViewHIVAuxSchema2(graph, seenTerms, definitionNumber, predicate, termsInAtom, bonds, bondTypes);
+		}
+	}
+
+	// Add missing edges based on bond types
+	for (var bondId in bonds) {
+		if (bonds.hasOwnProperty(bondId)) {
+			if (bondId in bondTypes) {
+				// There is already one edge between source and target
+				// Add only if type is 2 or 3
+				for (var j = 1; j < bondTypes[bondId]; j++) {
+					var sourceId = bonds[bondId].source;
+					var targetId = bonds[bondId].target;
+					
+					graph.add({
+						data: {
+							source: sourceId,
+							target: targetId
+							//label: predicate
+						},
+						classes: 'autorotate multiline-manual bezier'
+					});
+				};
+			}
+		}
+	}
+
+	graph.layout({
+		name: 'cose'
+	});
+
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		  var target = $(e.target).attr("href") // activated tab
+		  if (target == "#compareTab" || target == "#datalogTab" || target == "#learnTab" || target == "#learnDefinitionsTab") {
+		  	graph.resize();	
+		  	graph.layout({
+		  		name: 'cose'
+		  	});
+		  }
+		});
+}
+
+function createGraphicalViewForDefinitionHIV(definitionJson, elementId, schema) {
 	var graph = createGraph(elementId);
 
 	// For each definition
@@ -39,24 +303,13 @@ function createGraphicalViewHIV(definitionJson, elementId, schema) {
 			var atom = obj.body[j];
 
 			// Get predicate and terms
-			var tokens = atom.split("(");
-			var predicate = tokens[0];
-			var arguments = tokens[1].substring(0, tokens[1].length-1);
+			var predicate = getPredicateOfAtom(atom);
 
 			if (predicate == "compounds")
 				continue;
 
-			// Get terms in literal
-			var regex = /([^\"'][^,]*|\".+?\"|'.+?')[,\\s]*/g;
-			var match = regex.exec(arguments);
-
-			// Get terms in literal
-			var termsInAtom = [];
-			while (match != null) {
-				var term = match[1];
-				termsInAtom.push(term);
-				match = regex.exec(arguments);
-			}
+			// Get terms in atom
+			var termsInAtom = getTermsInAtom(atom);
 
 			// Process terms
 			if (schema == 1) {
@@ -168,8 +421,8 @@ function createGraphicalViewHIVAuxSchema1(graph, seenTerms, definitionNumber, pr
         		graph.getElementById(termId).addClass(classForElement);
 
         		// Set label
-        		//var label = predicate.replace("element_","").toUpperCase();
-        		var label = predicate;
+        		var label = capitalizeFirstLetter(predicate.replace("element_",""));
+        		//var label = predicate;
         		graph.getElementById(termId).data("label", label);
         	}
 
@@ -258,8 +511,8 @@ function createGraphicalViewHIVAuxSchema2(graph, seenTerms, definitionNumber, pr
         		graph.getElementById(termId).addClass(classForElement);
 
         		// Set label
-        		//var label = predicate.replace("element_","").toUpperCase();
-        		var label = predicate;
+        		var label = capitalizeFirstLetter(predicate.replace("element_",""));
+        		//var label = predicate;
         		graph.getElementById(termId).data("label", label);
         	}
 
@@ -561,3 +814,8 @@ function createGraph(elementId) {
 	return graph;
 }
 
+function clearSelectOptions(selectMenu) {
+	for(var i = selectMenu.options.length - 1 ; i >= 0 ; i--) {
+		selectMenu.remove(i);
+    }
+}

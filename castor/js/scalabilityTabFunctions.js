@@ -1,5 +1,5 @@
 
-$( document ).ready(function() {
+/*$( document ).ready(function() {
 
 	// 	DATASET 1 - HIV-Large
 
@@ -64,3 +64,4 @@ function isString(s) {
 function isNumber(n) {
 	return !isNan(parseFloat(n)) && isFinite(n);
 }
+*/
