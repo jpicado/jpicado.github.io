@@ -33,9 +33,9 @@ function clauseToStringHIV(clauseJson) {
 	var bondPrefix = "bond";
 
 	// Head
-	var head = clauseJson.head.replace("hiv_active", "hivActive");
+	// var head = clauseJson.head.replace("hiv_active", "hivActive");
 	var compoundId = compoundPrefix;
-	head = "hivActive("+compoundId+")"
+	var head = "antiHIVActive("+compoundId+")"
 
 	// Body
 	var body = bodyToStringHIV(clauseJson.body, compoundId, atomPrefix, bondPrefix);
