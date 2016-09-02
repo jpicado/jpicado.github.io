@@ -1,0 +1,47 @@
+{
+  "algorithm": "Progol",
+  "schema" : "Original",
+  "accuracy": 0.85,
+  "precision": 0.72,
+  "recall": 0.88,
+  "f1": 0.80,
+  "time": 9330.2686,
+  "definition": [
+    {
+      "head": "hivActive(A)",
+      "body": [
+        "compounds(A,B)", "element_C(B)", "bonds(C,B,D)", "element_C(D)", "bonds(E,D,F)", "element_O(F)", "bonds(G,F,H)", "element_C(H)", "bonds(I,B,J)", "element_N(J)"
+      ]
+    },
+    {
+      "head": "hivActive(A)",
+      "body": [
+        "compounds(A,B)", "element_C(B)", "bonds(C,B,D)", "element_C(D)", "bonds(E,D,F)", "element_O(F)", "bonds(G,F,H)", "element_C(H)", "bonds(I,D,J)", "element_H(J)"
+      ]
+    },
+    {
+      "head": "hivActive(A)",
+      "body": [
+        "compounds(A,B)", "element_N(B)", "p2_1(B)", "bonds(C,B,D)", "element_C(D)", "bonds(E,D,F)", "element_O(F)", "bonds(G,F,H)", "bonds(I,H,J)", "bonds(K,J,L)", "element_H(L)", "bonds(M,B,N)", "element_H(N)"
+      ]
+    },
+    {
+      "head": "hivActive(A)",
+      "body": [
+        "compounds(A,B)", "element_C(B)", "bonds(C,B,D)", "element_O(D)", "bonds(E,D,F)", "element_C(F)", "bonds(G,F,H)", "element_C(H)", "bonds(I,H,J)", "element_H(J)", "bonds(K,F,L)", "element_H(L)"
+      ]
+    },
+    {
+      "head": "hivActive(A)",
+      "body": [
+        "compounds(A,B)", "element_O(B)", "bonds(C,B,D)", "element_C(D)", "bonds(E,D,F)", "element_N(F)", "bonds(G,F,H)", "bonds(I,H,J)", "element_H(J)", "bonds(K,D,L)", "element_O(L)"
+      ]
+    },
+    {
+      "head": "hivActive(A)",
+      "body": [
+        "compounds(A,B)", "element_O(B)", "bonds(C,B,D)", "element_C(D)", "bonds(E,D,F)", "element_O(F)", "bonds(G,D,H)", "element_N(H)", "bonds(I,H,J)", "element_H(J)"
+      ]
+    }    
+  ]
+}
