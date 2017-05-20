@@ -86,7 +86,7 @@ body {
 body {
     font-family: "Lato";
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
     color: #555;
 
     -webkit-font-smoothing: antialiased;
@@ -640,6 +640,10 @@ a:after {
 	ADDED STYLES
 ==================================*/
 
+.sectionTab {
+	font-weight: bold;
+}
+
 #summary {
     margin-top: 20px;
 }
@@ -715,6 +719,14 @@ li {
 
 .author {
 	font-weight: bold;
+}
+
+.paper {
+	font-weight: bold;
+}
+
+.conference {
+	font-style: italic;
 }
 
 #contact {
