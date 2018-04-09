@@ -1,0 +1,35 @@
+{
+  "algorithm": "Baseline",
+  "schema" : "Original",
+  "accuracy": 0.88,
+  "precision": 0.92,
+  "recall": 0.71,
+  "f1": 0.80,
+  "time": 53.194,
+  "definition": [
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "publication(V19,V1), publication(V19,V0)"
+      ]
+    },
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "hasposition(V1,V4), inphase(V0,V2), taughtby(V5,V1,V6), courselevel(V7,'level_500'), professor(V1), courselevel(V5,V21), taughtby(V7,V1,V8), yearsinprogram(V0,V3), student(V0), ta(V5,V0,V17)"
+      ]
+    },
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "taughtby(V5,V1,'autumn_0203'), inphase(V0,'post_generals'), professor(V1), hasposition(V1,'faculty'), yearsinprogram(V0,V3), taughtby(V5,V1,'winter_0001'), student(V0), courselevel(V5,'level_400')"
+      ]
+    },
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "taughtby(V8,V1,V9), taughtby(V10,V1,'winter_0304'), inphase(V0,'post_quals'), professor(V1), hasposition(V1,'faculty'), courselevel(V10,'level_400'), yearsinprogram(V0,V3), student(V0), courselevel(V8,'level_300')"
+      ]
+    }
+  ]
+}

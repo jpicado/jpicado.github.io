@@ -1,0 +1,23 @@
+{
+  "algorithm": "AutoMode",
+  "schema" : "Original",
+  "accuracy": 0.90,
+  "precision": 1.0,
+  "recall": 0.71,
+  "f1": 0.83,
+  "time": 9.051,
+  "definition": [
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "publication(V19,V1), publication(V19,V0)"
+      ]
+    },
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "ta(V5,V0,V23), inphase(V0,V2), taughtby(V5,V1,V6), courselevel(V7,'level_500'), professor(V1), courselevel(V5,V21), taughtby(V7,V1,V8), hasposition(V1,'faculty'), yearsinprogram(V0,V3), student(V0)"
+      ]
+    }
+  ]
+}

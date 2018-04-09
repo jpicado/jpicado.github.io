@@ -1,0 +1,23 @@
+{
+  "algorithm": "AutoMode",
+  "schema" : "Original",
+  "accuracy": 0.90,
+  "precision": 1.0,
+  "recall": 0.71,
+  "f1": 0.83,
+  "time": 8.228,
+  "definition": [
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "publication(V17,V1), publication(V17,V0)"
+      ]
+    },
+    {
+      "head": "advisedby(V0,V1)",
+      "body": [
+        "taughtby(V3,V1,V4), ta(V3,V0,V26), taughtby(V5,V1,V6), professor(V1), hasposition(V1,'faculty'), courselevel(V3,V19), courselevel(V5,'level_500')"
+      ]
+    }
+  ]
+}

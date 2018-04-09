@@ -1,0 +1,549 @@
+Start time : 09-28-2017-17:44:33 
+[main] INFO  Reading parameters...
+[main] INFO  Reading inclusion dependencies...
+[main] INFO  Reading data model...
+[sqlcmd stdout] 
+[sqlcmd stdout] load classes sps/autocatalog.jar;
+[sqlcmd stdout] Command succeeded.
+[sqlcmd stdout] 
+[sqlcmd stdout] drop procedure auto.sp.UWCSEProcedure if exists;
+[sqlcmd stdout] Command succeeded.
+[sqlcmd stdout] 
+[sqlcmd stdout] create procedure from class auto.sp.UWCSEProcedure;
+[sqlcmd stdout] Command succeeded.
+[sqlcmd stdout] 
+[sqlcmd stdout] drop procedure auto.sp.UWCSEProcedureGround if exists;
+[sqlcmd stdout] Command succeeded.
+[sqlcmd stdout] 
+[sqlcmd stdout] create procedure from class auto.sp.UWCSEProcedureGround;
+[sqlcmd stdout] Command succeeded.
+[main] INFO  Creating coverage engine...
+[main] INFO  Learning...
+[main] INFO  Training positive examples in table ADVISEDBY_FOLD2_TRAIN_POS: 85
+[main] INFO  Training negative examples in table ADVISEDBY_FOLD2_TRAIN_NEG: 170
+[main] INFO  Remaining uncovered examples: 85
+[main] INFO  Generating bottom clause for [person21, person211]...
+[main] INFO  Literals: 35
+[main] INFO  Saturation time: 12 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:35, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:32, Score:8.0
+[main] INFO  Best armg at iter 2 - NumLits:32, Score:8.0
+[main] INFO  Stats before reduction: Precision(new)=1.0, F1(new)=0.17204301075268816, Recall(all)=0.09411764705882353
+[main] INFO  Remaining uncovered examples: 84
+[main] INFO  Generating bottom clause for [person45, person211]...
+[main] INFO  Literals: 36
+[main] INFO  Saturation time: 7 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:36, Score:2.0
+[main] INFO  Best armg at iter 1 - NumLits:36, Score:2.0
+[main] INFO  Stats before reduction: Precision(new)=0.5333333333333333, F1(new)=0.2807017543859649, Recall(all)=0.2
+[main] INFO  Remaining uncovered examples: 83
+[main] INFO  Generating bottom clause for [person275, person79]...
+[main] INFO  Literals: 30
+[main] INFO  Saturation time: 6 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:30, Score:-2.0
+[main] INFO  Best armg at iter 1 - NumLits:30, Score:-2.0
+[main] INFO  Stats before reduction: Precision(new)=0.48148148148148145, F1(new)=0.3795620437956204, Recall(all)=0.32941176470588235
+[main] INFO  Remaining uncovered examples: 82
+[main] INFO  Generating bottom clause for [person37, person79]...
+[main] INFO  Literals: 30
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:30, Score:-14.0
+[main] INFO  Best armg at iter 1 - NumLits:30, Score:-14.0
+[main] INFO  Stats before reduction: Precision(new)=0.20833333333333334, F1(new)=0.09433962264150944, Recall(all)=0.06097560975609756
+[main] INFO  Remaining uncovered examples: 81
+[main] INFO  Generating bottom clause for [person380, person79]...
+[main] INFO  Literals: 35
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:35, Score:14.0
+[main] INFO  Best armg at iter 1 - NumLits:34, Score:19.0
+[main] INFO  Best armg at iter 2 - NumLits:30, Score:24.0
+[main] INFO  Best armg at iter 3 - NumLits:30, Score:24.0
+[main] INFO  Stats before reduction: Precision(new)=0.9615384615384616, F1(new)=0.4672897196261682, Recall(all)=0.3253012048192771
+[main] INFO  Remaining uncovered examples: 80
+[main] INFO  Generating bottom clause for [person176, person407]...
+[main] INFO  Literals: 33
+[main] INFO  Saturation time: 7 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:33, Score:0.0
+[main] INFO  Best armg at iter 1 - NumLits:30, Score:1.0
+[main] INFO  Best armg at iter 2 - NumLits:30, Score:1.0
+[main] INFO  Stats before reduction: Precision(new)=0.509090909090909, F1(new)=0.4148148148148148, Recall(all)=0.35
+[main] INFO  Remaining uncovered examples: 79
+[main] INFO  Generating bottom clause for [person276, person407]...
+[main] INFO  Literals: 33
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:33, Score:-15.0
+[main] INFO  Best armg at iter 1 - NumLits:33, Score:-15.0
+[main] INFO  Stats before reduction: Precision(new)=0.17391304347826086, F1(new)=0.0784313725490196, Recall(all)=0.0625
+[main] INFO  Remaining uncovered examples: 78
+[main] INFO  Generating bottom clause for [person384, person407]...
+[main] INFO  Literals: 33
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:33, Score:-1.0
+[main] INFO  Best armg at iter 1 - NumLits:30, Score:0.0
+[main] INFO  Best armg at iter 2 - NumLits:30, Score:0.0
+[main] INFO  Stats before reduction: Precision(new)=0.5, F1(new)=0.40909090909090906, Recall(all)=0.35443037974683544
+[main] INFO  Remaining uncovered examples: 77
+[main] INFO  Generating bottom clause for [person14, person150]...
+[main] INFO  Literals: 31
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:31, Score:3.0
+[main] INFO  Best armg at iter 1 - NumLits:29, Score:18.0
+[main] INFO  Best armg at iter 2 - NumLits:24, Score:25.0
+[main] INFO  Best armg at iter 3 - NumLits:24, Score:25.0
+[main] INFO  Stats before reduction: Precision(new)=0.9629629629629629, F1(new)=0.5, Recall(all)=0.3625
+[main] INFO  Before reduction - NumLits:24, Score:25.0
+[main] INFO  After reduction - NumLits:3, Score:27.0
+[main] INFO  After minimization - NumLits:3
+[main] INFO  Stats: Score=27.0, Precision(new)=0.9655172413793104, F1(new)=0.5283018867924528, Recall(all)=0.3875
+[main] INFO  New clause added to theory:
+advisedby(V0,V1) :-
+	publication(V17,V1), publication(V17,V0).
+[main] INFO  New pos cover = 28, Total pos cover = 31, Total neg cover = 1
+[main] INFO  Remaining uncovered examples: 49
+[main] INFO  Generating bottom clause for [person320, person150]...
+[main] INFO  Literals: 25
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:25, Score:-8.0
+[main] INFO  Best armg at iter 1 - NumLits:25, Score:-8.0
+[main] INFO  Stats before reduction: Precision(new)=0.4090909090909091, F1(new)=0.3870967741935484, Recall(all)=0.45614035087719296
+[main] INFO  Remaining uncovered examples: 48
+[main] INFO  Generating bottom clause for [person208, person319]...
+[main] INFO  Literals: 19
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:19, Score:-5.0
+[main] INFO  Best armg at iter 1 - NumLits:19, Score:-5.0
+[main] INFO  Stats before reduction: Precision(new)=0.3684210526315789, F1(new)=0.20895522388059704, Recall(all)=0.2545454545454545
+[main] INFO  Remaining uncovered examples: 47
+[main] INFO  Generating bottom clause for [person312, person319]...
+[main] INFO  Literals: 18
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:18, Score:-21.0
+[main] INFO  Best armg at iter 1 - NumLits:18, Score:-21.0
+[main] INFO  Stats before reduction: Precision(new)=0.18181818181818182, F1(new)=0.14999999999999997, Recall(all)=0.16326530612244897
+[main] INFO  Remaining uncovered examples: 46
+[main] INFO  Generating bottom clause for [person318, person319]...
+[main] INFO  Literals: 20
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:20, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:20, Score:1.0
+[main] INFO  Stats before reduction: Precision(new)=1.0, F1(new)=0.042553191489361694, Recall(all)=0.021739130434782608
+[main] INFO  Remaining uncovered examples: 45
+[main] INFO  Generating bottom clause for [person353, person319]...
+[main] INFO  Literals: 19
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:19, Score:-6.0
+[main] INFO  Best armg at iter 1 - NumLits:19, Score:-6.0
+[main] INFO  Stats before reduction: Precision(new)=0.3333333333333333, F1(new)=0.19047619047619044, Recall(all)=0.2641509433962264
+[main] INFO  Remaining uncovered examples: 44
+[main] INFO  Generating bottom clause for [person384, person240]...
+[main] INFO  Literals: 40
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:40, Score:-9.0
+[main] INFO  Best armg at iter 1 - NumLits:40, Score:-9.0
+[main] INFO  Stats before reduction: Precision(new)=0.3953488372093023, F1(new)=0.3908045977011494, Recall(all)=0.49056603773584906
+[main] INFO  Remaining uncovered examples: 43
+[main] INFO  Generating bottom clause for [person432, person240]...
+[main] INFO  Literals: 40
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:40, Score:-10.0
+[main] INFO  Best armg at iter 1 - NumLits:40, Score:-10.0
+[main] INFO  Stats before reduction: Precision(new)=0.38095238095238093, F1(new)=0.3764705882352941, Recall(all)=0.49056603773584906
+[main] INFO  Remaining uncovered examples: 42
+[main] INFO  Generating bottom clause for [person239, person171]...
+[main] INFO  Literals: 33
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:33, Score:-6.0
+[main] INFO  Best armg at iter 1 - NumLits:33, Score:-6.0
+[main] INFO  Stats before reduction: Precision(new)=0.2857142857142857, F1(new)=0.14285714285714285, Recall(all)=0.20833333333333334
+[main] INFO  Remaining uncovered examples: 41
+[main] INFO  Generating bottom clause for [person286, person171]...
+[main] INFO  Literals: 33
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:33, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:31, Score:8.0
+[main] INFO  Best armg at iter 2 - NumLits:31, Score:8.0
+[main] INFO  Stats before reduction: Precision(new)=1.0, F1(new)=0.326530612244898, Recall(all)=0.32653061224489793
+[main] INFO  Remaining uncovered examples: 40
+[main] INFO  Generating bottom clause for [person418, person171]...
+[main] INFO  Literals: 32
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:32, Score:-13.0
+[main] INFO  Best armg at iter 1 - NumLits:32, Score:-13.0
+[main] INFO  Stats before reduction: Precision(new)=0.3333333333333333, F1(new)=0.32911392405063294, Recall(all)=0.49056603773584906
+[main] INFO  Remaining uncovered examples: 39
+[main] INFO  Generating bottom clause for [person265, person168]...
+[main] INFO  Literals: 14
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:14, Score:-25.0
+[main] INFO  Best armg at iter 1 - NumLits:14, Score:-25.0
+[main] INFO  Stats before reduction: Precision(new)=0.2807017543859649, F1(new)=0.3333333333333333, Recall(all)=0.6229508196721312
+[main] INFO  Remaining uncovered examples: 38
+[main] INFO  Generating bottom clause for [person381, person168]...
+[main] INFO  Literals: 15
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:15, Score:-8.0
+[main] INFO  Best armg at iter 1 - NumLits:15, Score:-8.0
+[main] INFO  Stats before reduction: Precision(new)=0.35714285714285715, F1(new)=0.30303030303030304, Recall(all)=0.37777777777777777
+[main] INFO  Remaining uncovered examples: 37
+[main] INFO  Generating bottom clause for [person18, person335]...
+[main] INFO  Literals: 35
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:35, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:33, Score:2.0
+[main] INFO  Best armg at iter 2 - NumLits:30, Score:3.0
+[main] INFO  Best armg at iter 3 - NumLits:30, Score:3.0
+[main] INFO  Stats before reduction: Precision(new)=0.8, F1(new)=0.19047619047619047, Recall(all)=0.23255813953488372
+[main] INFO  Remaining uncovered examples: 36
+[main] INFO  Generating bottom clause for [person362, person335]...
+[main] INFO  Literals: 33
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:33, Score:-2.0
+[main] INFO  Best armg at iter 1 - NumLits:33, Score:-2.0
+[main] INFO  Stats before reduction: Precision(new)=0.4166666666666667, F1(new)=0.20833333333333334, Recall(all)=0.18421052631578946
+[main] INFO  Remaining uncovered examples: 35
+[main] INFO  Generating bottom clause for [person9, person335]...
+[main] INFO  Literals: 34
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:34, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:32, Score:5.0
+[main] INFO  Best armg at iter 2 - NumLits:32, Score:5.0
+[main] INFO  Stats before reduction: Precision(new)=0.9, F1(new)=0.39999999999999997, Recall(all)=0.43478260869565216
+[main] INFO  Before reduction - NumLits:31, Score:8.0
+[main] INFO  After reduction - NumLits:8, Score:8.0
+[main] INFO  After minimization - NumLits:8
+[main] INFO  Stats: Score=8.0, Precision(new)=0.9, F1(new)=0.39999999999999997, Recall(all)=0.43478260869565216
+[main] INFO  New clause added to theory:
+advisedby(V0,V1) :-
+	taughtby(V3,V1,V4), ta(V3,V0,V26), taughtby(V5,V1,V6), professor(V1), hasposition(V1,"faculty"), courselevel(V3,V19), courselevel(V5,"level_500").
+[main] INFO  New pos cover = 9, Total pos cover = 20, Total neg cover = 1
+[main] INFO  Remaining uncovered examples: 26
+[main] INFO  Generating bottom clause for [person118, person5]...
+[main] INFO  Literals: 19
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:19, Score:-21.0
+[main] INFO  Best armg at iter 1 - NumLits:19, Score:-21.0
+[main] INFO  Stats before reduction: Precision(new)=0.2, F1(new)=0.22950819672131148, Recall(all)=0.5957446808510638
+[main] INFO  Remaining uncovered examples: 25
+[main] INFO  Generating bottom clause for [person183, person5]...
+[main] INFO  Literals: 21
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:21, Score:-2.0
+[main] INFO  Best armg at iter 1 - NumLits:21, Score:-2.0
+[main] INFO  Stats before reduction: Precision(new)=0.25, F1(new)=0.06896551724137932, Recall(all)=0.04
+[main] INFO  Remaining uncovered examples: 24
+[main] INFO  Generating bottom clause for [person263, person5]...
+[main] INFO  Literals: 19
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:19, Score:-22.0
+[main] INFO  Best armg at iter 1 - NumLits:19, Score:-22.0
+[main] INFO  Stats before reduction: Precision(new)=0.17647058823529413, F1(new)=0.20689655172413793, Recall(all)=0.6086956521739131
+[main] INFO  Remaining uncovered examples: 23
+[main] INFO  Generating bottom clause for [person362, person5]...
+[main] INFO  Literals: 19
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:19, Score:-17.0
+[main] INFO  Best armg at iter 1 - NumLits:19, Score:-17.0
+[main] INFO  Stats before reduction: Precision(new)=0.2571428571428571, F1(new)=0.3103448275862069, Recall(all)=0.65
+[main] INFO  Remaining uncovered examples: 22
+[main] INFO  Generating bottom clause for [person67, person375]...
+[main] INFO  Literals: 29
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:29, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:29, Score:1.0
+[main] INFO  Stats before reduction: Precision(new)=1.0, F1(new)=0.08695652173913045, Recall(all)=0.045454545454545456
+[main] INFO  Remaining uncovered examples: 21
+[main] INFO  Generating bottom clause for [person391, person235]...
+[main] INFO  Literals: 37
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:37, Score:-18.0
+[main] INFO  Best armg at iter 1 - NumLits:37, Score:-18.0
+[main] INFO  Stats before reduction: Precision(new)=0.23529411764705882, F1(new)=0.29090909090909084, Recall(all)=0.6666666666666666
+[main] INFO  Remaining uncovered examples: 20
+[main] INFO  Generating bottom clause for [person426, person235]...
+[main] INFO  Literals: 37
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:37, Score:-19.0
+[main] INFO  Best armg at iter 1 - NumLits:37, Score:-19.0
+[main] INFO  Stats before reduction: Precision(new)=0.21212121212121213, F1(new)=0.26415094339622636, Recall(all)=0.6666666666666666
+[main] INFO  Remaining uncovered examples: 19
+[main] INFO  Generating bottom clause for [person126, person213]...
+[main] INFO  Literals: 25
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:25, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:25, Score:1.0
+[main] INFO  Stats before reduction: Precision(new)=1.0, F1(new)=0.1, Recall(all)=0.05263157894736842
+[main] INFO  Remaining uncovered examples: 18
+[main] INFO  Generating bottom clause for [person116, person124]...
+[main] INFO  Literals: 32
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:32, Score:-3.0
+[main] INFO  Best armg at iter 1 - NumLits:32, Score:-3.0
+[main] INFO  Stats before reduction: Precision(new)=0.2, F1(new)=0.08695652173913045, Recall(all)=0.05555555555555555
+[main] INFO  Remaining uncovered examples: 17
+[main] INFO  Generating bottom clause for [person130, person124]...
+[main] INFO  Literals: 30
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:30, Score:-13.0
+[main] INFO  Best armg at iter 1 - NumLits:28, Score:-12.0
+[main] INFO  Best armg at iter 2 - NumLits:28, Score:-12.0
+[main] INFO  Stats before reduction: Precision(new)=0.22727272727272727, F1(new)=0.25641025641025644, Recall(all)=0.5714285714285714
+[main] INFO  Remaining uncovered examples: 16
+[main] INFO  Generating bottom clause for [person374, person179]...
+[main] INFO  Literals: 23
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:23, Score:-24.0
+[main] INFO  Best armg at iter 1 - NumLits:23, Score:-24.0
+[main] INFO  Stats before reduction: Precision(new)=0.125, F1(new)=0.16666666666666666, Recall(all)=0.7
+[main] INFO  Remaining uncovered examples: 15
+[main] INFO  Generating bottom clause for [person376, person179]...
+[main] INFO  Literals: 28
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:28, Score:-8.0
+[main] INFO  Best armg at iter 1 - NumLits:28, Score:-8.0
+[main] INFO  Stats before reduction: Precision(new)=0.16666666666666666, F1(new)=0.14814814814814814, Recall(all)=0.43478260869565216
+[main] INFO  Remaining uncovered examples: 14
+[main] INFO  Generating bottom clause for [person426, person179]...
+[main] INFO  Literals: 23
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:23, Score:-21.0
+[main] INFO  Best armg at iter 1 - NumLits:23, Score:-21.0
+[main] INFO  Stats before reduction: Precision(new)=0.16129032258064516, F1(new)=0.2222222222222222, Recall(all)=0.7428571428571429
+[main] INFO  Remaining uncovered examples: 13
+[main] INFO  Generating bottom clause for [person129, person234]...
+[main] INFO  Literals: 24
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:24, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:24, Score:1.0
+[main] INFO  Stats before reduction: Precision(new)=1.0, F1(new)=0.14285714285714288, Recall(all)=0.4
+[main] INFO  Remaining uncovered examples: 12
+[main] INFO  Generating bottom clause for [person67, person98]...
+[main] INFO  Literals: 25
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:25, Score:-1.0
+[main] INFO  Best armg at iter 1 - NumLits:25, Score:-1.0
+[main] INFO  Stats before reduction: Precision(new)=0.4, F1(new)=0.23529411764705882, Recall(all)=0.4444444444444444
+[main] INFO  Remaining uncovered examples: 11
+[main] INFO  Generating bottom clause for [person100, person104]...
+[main] INFO  Literals: 31
+[main] INFO  Saturation time: 4 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:31, Score:-6.0
+[main] INFO  Best armg at iter 1 - NumLits:31, Score:-6.0
+[main] INFO  Stats before reduction: Precision(new)=0.125, F1(new)=0.10526315789473685, Recall(all)=0.3333333333333333
+[main] INFO  Remaining uncovered examples: 10
+[main] INFO  Generating bottom clause for [person89, person104]...
+[main] INFO  Literals: 30
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:30, Score:-13.0
+[main] INFO  Best armg at iter 1 - NumLits:30, Score:-13.0
+[main] INFO  Stats before reduction: Precision(new)=0.06666666666666667, F1(new)=0.08, Recall(all)=0.6538461538461539
+[main] INFO  Remaining uncovered examples: 9
+[main] INFO  Generating bottom clause for [person155, person101]...
+[main] INFO  Literals: 29
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:29, Score:-13.0
+[main] INFO  Best armg at iter 1 - NumLits:29, Score:-13.0
+[main] INFO  Stats before reduction: Precision(new)=0.11764705882352941, F1(new)=0.15384615384615383, Recall(all)=0.36363636363636365
+[main] INFO  Remaining uncovered examples: 8
+[main] INFO  Generating bottom clause for [person280, person101]...
+[main] INFO  Literals: 26
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:26, Score:-3.0
+[main] INFO  Best armg at iter 1 - NumLits:26, Score:-3.0
+[main] INFO  Stats before reduction: Precision(new)=0.2, F1(new)=0.15384615384615385, Recall(all)=0.2222222222222222
+[main] INFO  Remaining uncovered examples: 7
+[main] INFO  Generating bottom clause for [person92, person101]...
+[main] INFO  Literals: 28
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:28, Score:0.0
+[main] INFO  Best armg at iter 1 - NumLits:28, Score:0.0
+[main] INFO  Stats before reduction: Precision(new)=0.5, F1(new)=0.22222222222222224, Recall(all)=0.4
+[main] INFO  Remaining uncovered examples: 6
+[main] INFO  Generating bottom clause for [person159, person201]...
+[main] INFO  Literals: 22
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:22, Score:-4.0
+[main] INFO  Best armg at iter 1 - NumLits:22, Score:-4.0
+[main] INFO  Stats before reduction: Precision(new)=0.3, F1(new)=0.37499999999999994, Recall(all)=0.7
+[main] INFO  Remaining uncovered examples: 5
+[main] INFO  Generating bottom clause for [person68, person201]...
+[main] INFO  Literals: 22
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:22, Score:-4.0
+[main] INFO  Best armg at iter 1 - NumLits:22, Score:-4.0
+[main] INFO  Stats before reduction: Precision(new)=0.25, F1(new)=0.3076923076923077, Recall(all)=0.6666666666666666
+[main] INFO  Remaining uncovered examples: 4
+[main] INFO  Generating bottom clause for [person141, person331]...
+[main] INFO  Literals: 48
+[main] INFO  Saturation time: 6 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:48, Score:1.0
+[main] INFO  Best armg at iter 1 - NumLits:48, Score:1.0
+[main] INFO  Stats before reduction: Precision(new)=1.0, F1(new)=0.4, Recall(all)=0.25
+[main] INFO  Remaining uncovered examples: 3
+[main] INFO  Generating bottom clause for [person226, person324]...
+[main] INFO  Literals: 38
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:38, Score:0.0
+[main] INFO  Best armg at iter 1 - NumLits:38, Score:0.0
+[main] INFO  Stats before reduction: Precision(new)=0.5, F1(new)=0.4, Recall(all)=0.6
+[main] INFO  Remaining uncovered examples: 2
+[main] INFO  Generating bottom clause for [person348, person324]...
+[main] INFO  Literals: 37
+[main] INFO  Saturation time: 5 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:37, Score:-5.0
+[main] INFO  Best armg at iter 1 - NumLits:37, Score:-5.0
+[main] INFO  Stats before reduction: Precision(new)=0.14285714285714285, F1(new)=0.22222222222222224, Recall(all)=0.8333333333333334
+[main] INFO  Remaining uncovered examples: 1
+[main] INFO  Generating bottom clause for [person309, person378]...
+[main] INFO  Literals: 27
+[main] INFO  Saturation time: 3 milliseconds.
+[main] INFO  Reordering bottom clause...
+[main] INFO  Generalizing clause...
+[main] INFO  Best armg at iter 0 - NumLits:27, Score:-9.0
+[main] INFO  Stats before reduction: Precision(new)=0.09090909090909091, F1(new)=0.16666666666666669, Recall(all)=1.0
+[main] INFO  Definition learned:
+advisedby(V0,V1) :-
+	publication(V17,V1), publication(V17,V0).	(Pos cover=31, Neg cover=1)
+advisedby(V0,V1) :-
+	taughtby(V3,V1,V4), ta(V3,V0,V26), taughtby(V5,V1,V6), professor(V1), hasposition(V1,"faculty"), courselevel(V3,V19), courselevel(V5,"level_500").	(Pos cover=20, Neg cover=1)
+
+[main] INFO  Evaluating on training data...
+[main] INFO  Testing positive examples in table ADVISEDBY_FOLD2_TRAIN_POS: 85
+[main] INFO  Testing negative examples in table ADVISEDBY_FOLD2_TRAIN_NEG: 170
+[main] INFO  Statistics:
+		|	    Actual		|
+Predicted	|    Positive	|    Negative	|    Total
+    Positive	|	42	|	2	|	44
+    Negative	|	43	|	168	|	211
+Total		|	85	|	170	|	255
+
+Accuracy: 0.8235294117647058
+Precision: 0.9545454545454546
+Recall: 0.49411764705882355
+F1: 0.6511627906976745
+
+[main] INFO  Total time: 8228
+[main] INFO  Creating coverage engine time: 880
+[main] INFO  Learning time: 7346
+[main] INFO  Coverage time: 5613
+[main] INFO  Coverage calls: 18005
+[main] INFO  Scoring time: 2057
+[main] INFO  Entailment time: 4362
+[main] INFO  Minimization time: 0
+[main] INFO  Reduction time: 41
+[main] INFO  LGG time: 0
+[main] INFO  LearnClause time: 0
+[main] INFO  Evaluating on testing data...
+[main] INFO  Testing positive examples in table ADVISEDBY_FOLD2_TEST_POS: 17
+[main] INFO  Testing negative examples in table ADVISEDBY_FOLD2_TEST_NEG: 34
+[main] INFO  Statistics:
+		|	    Actual		|
+Predicted	|    Positive	|    Negative	|    Total
+    Positive	|	12	|	0	|	12
+    Negative	|	5	|	34	|	39
+Total		|	17	|	34	|	51
+
+Accuracy: 0.9019607843137255
+Precision: 1.0
+Recall: 0.7058823529411765
+F1: 0.8275862068965517
+
+End time : 09-28-2017-17:44:45 
+Elapsed time: 24
