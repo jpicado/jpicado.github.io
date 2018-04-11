@@ -1,0 +1,76 @@
+{
+	"name": "Schema1",
+	"relations": [
+		{
+			"name": "advisedby",
+			"attributes": [
+				"student",
+				"advisor"
+			]
+		},
+
+   		{
+   			"name": "taughtby",
+			"attributes": [
+				"course",
+   				"professor",
+   				"term"
+   			]
+   		},
+   		{
+   			"name": "courselevel",
+			"attributes": [
+				"course",
+   				"level"
+   			]
+   		},
+   		{
+   			"name": "hasposition",
+			"attributes": [
+				"professor",
+   				"position"
+   			]
+   		},
+   		{
+			"name": "inphase",
+			"attributes": [
+				"student",
+   				"phase"
+   			]
+   		},
+   		{
+			"name": "yearsinprogram",
+			"attributes": [
+				"student",
+   				"years"
+   			]
+   		},
+   		{
+   			"name": "ta",
+			"attributes": [
+				"course",
+   				"student",
+   				"term"
+   			]
+   		},
+   		{
+   			"name": "professor",
+			"attributes": [
+				"professor"
+			]
+   		},
+   		{
+   			"name": "student",
+			"attributes": [
+				"student"
+			]
+   		},
+   		{
+   			"name": "publication",
+			"attributes": [
+				"title",
+   				"author"
+   			]
+   		}
+	]
+}

@@ -29,6 +29,7 @@
         <ul class="nav nav-tabs default-primary-color roundedTopCorners">
           
           <li class="active h5Size"><a data-toggle="tab" href="#automodeTab">AutoMode</a></li>
+          <li><a class="h5Size" data-toggle="tab" href="#typegraphTab" onclick="loadAutomodeExact()">Join Graph</a></li>
           <!--li><a data-toggle="tab" href="#learnTab">Castor Relational Learning</a></li-->
           <!--li><a data-toggle="tab" href="#compareTab">Schema Independence</a></li-->
           <!--<li><a data-toggle="tab" href="#testTab">Test</a></li>-->
@@ -53,7 +54,7 @@
         <div class="tab-content">
 
           <!-- automode -->
-          <div id="autoModeTab" class="tab-pane fade in active">
+          <div id="automodeTab" class="tab-pane fade in active">
             <!-- automodeTabContent -->
             <div id="automodeTabContent" class="col-md-12 roundedBottomCorners tabContent">
 
@@ -213,6 +214,40 @@ publication(-ref,+professor)</textarea>
           </div>
           <!-- /automode -->
 
+          <!-- typegraph -->
+          <div id="typegraphTab" class="tab-pane fade in">
+            <!-- typegraphTabContent -->
+            <div id="typegraphTabContent" class="col-md-12 roundedBottomCorners tabContent">
+
+              <div class="col-md-12">
+                <div class="col-md-4" id="c1">
+                  <h5>Hypothesis language</h5>
+                  <div>
+                    <div class="col-md-12">
+                      <input type="radio" name="checkfield" id="autoModeOption" checked="checked" onclick="loadAutomodeExact()" />
+                      <label class="h5Size" for="autoModeOption">AutoMode</label>
+                      <input type="checkbox" name="checkfield" id="automodeApproxOption"  onclick="loadAutomodeApprox()" />
+                      <label class="h5Size" for="automodeApproxOption">Approx</label>
+                    </div>
+                    <div class="col-md-12">
+                      <input type="radio" name="checkfield" id="loadManualTunedOption" onclick="loadManualTuned()" />
+                      <label class="h5Size" for="loadManualTunedOption">Manual</label>
+                    </div>
+                    <div class="col-md-12">
+                      <input type="radio" name="checkfield" id="baseLineOption" onclick="loadBaseline()" />
+                      <label class="h5Size" for="baseLineOption">Baseline</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-8" >
+                  <div id="typegraph"></div>
+                </div>
+              </div>
+            </div>
+            <!-- /typegraphTabContent -->
+          </div>
+          <!-- /typegraph -->
+
         </div>
         <!-- /tab-content -->
 
@@ -231,5 +266,7 @@ publication(-ref,+professor)</textarea>
     <script type="text/javascript" src="js/learnFakeFunction.js"></script>
     <script type="text/javascript" src="js/learnTabFunctions.js"></script>
     <script src="schemas/automodeTab-uwcse1/code-public.js"></script>
+
+    <script type="text/javascript" src="js/typegraph.js"></script>
   </body>
   </html>
