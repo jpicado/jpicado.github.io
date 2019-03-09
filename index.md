@@ -45,6 +45,12 @@ title: Jose Picado
       <div class="col-lg-offset-2 col-lg-8">
         <ul>
           <li>
+            <span class="paper">Logical Scalability and Efficiency of Relational Learning Algorithms 
+  </span>&nbsp;&nbsp;&nbsp;&nbsp;[<a href="papers/Castor_VLDBJ2018.pdf">PDF</a>]<br>
+            Jose Picado, Arash Termehchy, Alan Fern, Parisa Ataei<br>
+            <span class="conference">The VLDB Journal (VLDBJ), 2018</span>
+          </li>
+          <li>
             <span class="paper">Learning Efficiently Over Heterogeneous Databases 
   </span>&nbsp;&nbsp;&nbsp;&nbsp;[<a href="papers/p2066-picado.pdf">PDF</a>]<br>
             Jose Picado, Arash Termehchy, Sudhanshu Pathak<br>
