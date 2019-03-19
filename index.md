@@ -140,7 +140,7 @@ title: Jose Picado
         <h3>Wake Forest University</h3>
         M.Sc. in Computer Science<br>
         Machine Learning<br>
-        Advisor: <a href="http://homes.soic.indiana.edu/natarasr/">Sriraam Natarajan</a>
+        Advisor: <a href="http://utdallas.edu/~sriraam.natarajan/">Sriraam Natarajan</a>
         <br>
         <a href="http://wakespace.lib.wfu.edu/handle/10339/38554">Thesis</a>
       </div><!-- col-lg-4 --> 
