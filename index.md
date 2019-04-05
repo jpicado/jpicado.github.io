@@ -61,7 +61,7 @@ title: Jose Picado
       <h2 class="centered">Portfolio</h2>
       <div class="project col-md-12">
       <!--div class="project col-md-12 vertical-align"-->
-        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+        <div class="col-xs-12 col-md-3">
           <img src="portfolio/cloud-databases/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
@@ -77,7 +77,7 @@ title: Jose Picado
       </div>
       <!-- project -->
       <div class="project col-md-12">
-        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+        <div class="col-xs-12 col-md-3">
           <img src="portfolio/castor/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-xs-12 col-md-9">
@@ -93,7 +93,7 @@ title: Jose Picado
       </div>
       <!-- project -->
       <div class="project col-md-12">
-        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+        <div class="col-xs-12 col-md-3">
           <img src="portfolio/castorx/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
@@ -108,7 +108,7 @@ title: Jose Picado
       </div>
       <!-- project -->
       <div class="project col-md-12">
-        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+        <div class="col-xs-12 col-md-3">
           <img src="portfolio/ade/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
@@ -123,7 +123,7 @@ title: Jose Picado
       </div>
       <!-- project -->
       <div class="project col-md-12">
-        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+        <div class="col-xs-12 col-md-3">
           <img src="portfolio/stackoverflow/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
@@ -138,7 +138,7 @@ title: Jose Picado
       </div>
       <!-- project -->
       <div class="project col-md-12">
-        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+        <div class="col-xs-12 col-md-3">
           <img src="portfolio/rainfall/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
@@ -153,7 +153,7 @@ title: Jose Picado
       </div>
       <!-- project -->
       <!--div class="project col-md-12">
-        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+        <div class="project col-xs-12 col-md-3">
           <img src="portfolio/ppi/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
