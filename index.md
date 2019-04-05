@@ -59,9 +59,10 @@ title: Jose Picado
   <div class="container" id="projects" name="projects">
     <div class="row">
       <h2 class="centered">Portfolio</h2>
-      <div class="project col-md-12 vertical-align">
-        <div class="col-md-3">
-          <img src="portfolio/cloud-databases/img.png" alt="" class="" width="225"/>
+      <div class="project col-md-12">
+      <!--div class="project col-md-12 vertical-align"-->
+        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+          <img src="portfolio/cloud-databases/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
           <div class="projectTitle"><h3>Predicting the lifespan of cloud databases</h3></div>
@@ -75,11 +76,11 @@ title: Jose Picado
         </div>
       </div>
       <!-- project -->
-      <div class="project col-md-12 vertical-align">
-        <div class="col-md-3">
-          <img src="portfolio/castor/img.png" alt="" class="" width="225"/>
+      <div class="project col-md-12">
+        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+          <img src="portfolio/castor/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
-        <div class="col-md-9">
+        <div class="col-xs-12 col-md-9">
           <div class="projectTitle"><h3>Machine learning over structured data</h3></div>
           <div class="projectDescription">
             <p>Most machine learning algorithms assume that data can be stored in matrix form: rows represent observations and columns represent features. However, real-world data is rarely in this form. Instead, application domains usually contain information about different types of entities. One way of storing information about different types of entities is through relational databases. Given a relational database and training examples for a new concept, relational machine learning algorithms learn a definition of the concept in terms of existing relations in the database. We developed a relational learning system called Castor. We used Castor in different domains, such as learning a model to predict whether a chemical compound has anti-HIV activity, learning a model to predict whether a movie will be high grossing, and reverse-engineering SQL queries from training examples.</p>
@@ -91,9 +92,9 @@ title: Jose Picado
         </div>
       </div>
       <!-- project -->
-      <div class="project col-md-12 vertical-align">
-        <div class="col-md-3">
-          <img src="portfolio/castorx/img.png" alt="" class="" width="225"/>
+      <div class="project col-md-12">
+        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+          <img src="portfolio/castorx/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
           <div class="projectTitle"><h3>Machine learning over heterogeneous databases</h3></div>
@@ -106,9 +107,9 @@ title: Jose Picado
         </div>
       </div>
       <!-- project -->
-      <div class="project col-md-12 vertical-align">
-        <div class="col-md-3">
-          <img src="portfolio/ade/img.png" alt="" class="" width="225"/>
+      <div class="project col-md-12">
+        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+          <img src="portfolio/ade/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
           <div class="projectTitle"><h3>Extracting adverse drug events from text</h3></div>
@@ -121,9 +122,9 @@ title: Jose Picado
         </div>
       </div>
       <!-- project -->
-      <div class="project col-md-12 vertical-align">
-        <div class="col-md-3">
-          <img src="portfolio/stackoverflow/img.png" alt="" class="" width="225"/>
+      <div class="project col-md-12">
+        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+          <img src="portfolio/stackoverflow/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
           <div class="projectTitle"><h3>Learning to label Stack Overflow questions</h3></div>
@@ -136,9 +137,9 @@ title: Jose Picado
         </div>
       </div>
       <!-- project -->
-      <div class="project col-md-12 vertical-align">
-        <div class="col-md-3">
-          <img src="portfolio/rainfall/img.png" alt="" class="" width="225"/>
+      <div class="project col-md-12">
+        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+          <img src="portfolio/rainfall/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
           <div class="projectTitle"><h3>Using Bayesian networks to estimate rainfall distribution given polarimetric radar data</h3></div>
@@ -151,9 +152,9 @@ title: Jose Picado
         </div>
       </div>
       <!-- project -->
-      <!--div class="project col-md-12 vertical-align">
-        <div class="col-md-3">
-          <img src="portfolio/ppi/img.png" alt="" class="" width="225"/>
+      <!--div class="project col-md-12">
+        <div class="col-xs-12 col-xs-offset-3 col-md-3 col-md-offset-0">
+          <img src="portfolio/ppi/img.png" alt="" class="paddingtop30" width="225"/>
         </div>
         <div class="col-md-9">
           <div class="projectTitle"><h3>Evaluating the scalability of clustering algorithms on protein-protein interaction networks</h3></div>
