@@ -758,6 +758,10 @@ a:before, a:after {
   padding-bottom: 20px;
 }
 
+.project {
+  padding-bottom: 20px;
+}
+
 .bordered {
   border: 1px solid #ddd;
 }
@@ -768,6 +772,10 @@ a:before, a:after {
 }
 
 .paper {
+  font-weight: bold;
+}
+
+.bold {
   font-weight: bold;
 }
 
@@ -784,3 +792,8 @@ li {
 }
 
 
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
