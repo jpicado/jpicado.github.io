@@ -45,7 +45,7 @@ title: Jose Picado
             <p>Before starting my Ph.D., I lived in North Carolina for two years, where I got my Masters degree in Computer Science from Wake Forest University, advised by <a href="http://utdallas.edu/~sriraam.natarajan/">Sriraam Natarajan</a>. My research was on <span class="bold">statistical relational learning</span>, specifically with applications to information extraction.</p>
             <p>I'm originally from <a href="http://happyplanetindex.org/countries/costa-rica">Costa Rica</a>, where I studied <span class="bold">Computer Science</span> at the Costa Rica Institute of Technology and then worked as a <span class="bold">Software Engineer</span> at Avantica Technologies.</p>
             <p>I enjoy playing tennis, football (the kind you play with your feet), running, music, and traveling.</p>
-            <p><span class="bold">NOTE.</span> I am looking for a data scientist/research scientist/software engineer full-time position.</p>
+            <p><span class="bold">NOTE.</span> I am looking for a software engineer, machine learning engineer, or data scientist full-time position.</p>
           </div>
         </div>
       </div>
