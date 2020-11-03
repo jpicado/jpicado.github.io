@@ -21,7 +21,7 @@ title: Jose Picado
           <div>
             <br>
             <p>Hi, I'm Jose. I'm a software engineer at <a href="https://www.afterpay.com">Afterpay</a> &#128640;. My team builds systems to support machine learning use cases at Afterpay. This includes serving machine learning models in production, building data pipelines, building a feature store, etc. We also built the search engine in Afterpay's shop directory.</p>
-            <p>&#127891; Before Afterpay, I did a PhD (machine learning/data management), MS (machine learninig), and BS, all in computer science. You can find a list of my publications <a href="#publications">below</a>.</p>
+            <p>&#127891; Before Afterpay, I did a PhD (machine learning/data management), MS (machine learning), and BS, all in computer science. You can find a list of my publications <a href="#publications">below</a>.</p>
             <p>&#128187; In between my many years in academia, I worked as a data scientist (intern) at <a href="https://azuredata.microsoft.com/">Microsoft</a>, as a research scientist (intern) at <a href="https://www.intel.com/">Intel</a>, and as a software engnieer at <a href="https://www.avantica.com/">Avantica</a>.</p>
             <p>I enjoy playing tennis &#127934;, football (soccer) &#9917;, running &#127939;, music &#127926;, and traveling &#127758;.</p>
           </div>
@@ -93,11 +93,6 @@ title: Jose Picado
             <span class="paper">Markov Logic Networks for Adverse Drug Event Extraction from Text</span>&nbsp;&nbsp;&nbsp;&nbsp;[<a href="papers/ADEKAIS.pdf">paper</a>]<br>
             Sriraam Natarajan, Vishal Bangera, Tushar Khot, Jose Picado, Anurag Wazalwar, Vitor Santos Costa, David Page, Michael Caldwell<br>
             <span class="conference">KAIS, 2016</span>
-          </li>
-          <li>
-            <span class="paper">Representation Independent Analytics Over Structured Data</span>&nbsp;&nbsp;&nbsp;&nbsp;[<a href="https://arxiv.org/abs/1409.2553">technical report</a>]<br>
-            Jose Picado, Yodsawalai Chodpathumwan, Arash, Termehchy, Alan Fern, Yizhou Sun<br>
-            <span class="conference">Technical Report, 2014</span>
           </li>
           <li>
             <span class="paper">Effectively Creating Weakly Labeled Training Examples Via Approximate Domain Knowledge</span>&nbsp;&nbsp;&nbsp;&nbsp;[<a href="papers/WeakSupervision_ILP2014.pdf">paper</a>]<br>
