@@ -22,7 +22,7 @@ title: Jose Picado
             <br>
             <p>Hi, I'm Jose. I'm a software engineer at <a href="https://www.afterpay.com">Afterpay</a> &#128640;. My team builds systems to support machine learning use cases at Afterpay. This includes serving machine learning models in production, building data pipelines, building a feature store, etc. We also built the search engine in Afterpay's shop directory.</p>
             <p>&#127891; Before Afterpay, I did a PhD (machine learning/data management), MS (machine learning), and BS, all in computer science. You can find a list of my publications <a href="#publications">below</a>.</p>
-            <p>&#128187; In between my many years in academia, I worked as a data scientist (intern) at <a href="https://azuredata.microsoft.com/">Microsoft</a>, as a research scientist (intern) at <a href="https://www.intel.com/">Intel</a>, and as a software engnieer at <a href="https://www.avantica.com/">Avantica</a>.</p>
+            <p>&#128187; In between my many years in academia, I worked as a data scientist (intern) at <a href="https://azuredata.microsoft.com/">Microsoft</a>, as a research scientist (intern) at <a href="https://www.intel.com/">Intel</a>, and as a software engineer at <a href="https://www.avantica.com/">Avantica</a>.</p>
             <p>I enjoy playing tennis &#127934;, football (soccer) &#9917;, running &#127939;, music &#127926;, and traveling &#127758;.</p>
           </div>
         </div>
