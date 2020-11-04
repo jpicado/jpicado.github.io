@@ -34,6 +34,15 @@ title: Jose Picado
 
 
   <div class="container">
+    <div class="separator">
+    </div>
+    <!-- separator -->
+  </div>
+  <!-- container -->
+
+
+
+  <div class="container">
     
   </div>
   <!-- container -->

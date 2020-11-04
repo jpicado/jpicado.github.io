@@ -754,8 +754,11 @@ a:before, a:after {
 }
 
 .row {
-  border-bottom: 1px solid #ddd;
   padding-bottom: 20px;
+}
+
+.separator {
+  border-bottom: 1px solid #ddd;
 }
 
 .project {
