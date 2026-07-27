@@ -12,7 +12,7 @@ title: Jose Picado
   <!-- ==== ABOUT ==== -->
   <div class="container" id="about" name="about">
     <div class="row">
-      <div class="col-xs-12 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-1">
+      <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="">
           <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-0 col-md-3 col-md-offset-2">
             <img src="img/skydiving.png" alt="Jose" class="img-circle"/>

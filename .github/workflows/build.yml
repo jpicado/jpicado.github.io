@@ -1,0 +1,44 @@
+name: Build site
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check for broken internal links
+        run: |
+          bundle exec ruby -e '
+            missing = []
+            Dir.glob("_site/**/*.html").each do |file|
+              html = File.read(file).gsub(/<!--.*?-->/m, "")
+              html.scan(/(?:href|src)="([^"#?:]+)"/).flatten.each do |link|
+                next if link.start_with?("//") || link.empty?
+                target = link.start_with?("/") ? File.join("_site", link) : File.join(File.dirname(file), link)
+                next if File.exist?(target) || File.exist?(File.join(target, "index.html"))
+                missing << "#{file}: #{link}"
+              end
+            end
+            if missing.any?
+              puts "Broken internal links:"
+              puts missing
+              exit 1
+            end
+            puts "No broken internal links."
+          '

@@ -8,11 +8,11 @@ title: Jose Picado
       <br>
       <br>
       <br>
-      <div class="col-xs-12 col-xs-offset-1 col-sm-12 col-sm-offset-2 col-md-12 col-md-offset-3">
-        <div class="col-xs-10 col-sm-4 col-md-3">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-2 col-md-3 col-md-offset-3">
           <img src="img/jose.png" alt="Jose" class="img-circle paddingtop30"/>
         </div>
-        <div class="col-md-4 col-sm-6 col-xs-10">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-0 col-md-4">
           <h1 id="headerName">Jose Picado</h1>
           <!--div id="headerTitle">Ph.D. Candidate in Computer Science</div-->
           <h4>jpicado [AT] gmail [DOT] com</h4>
