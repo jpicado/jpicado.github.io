@@ -13,6 +13,20 @@ bundle exec jekyll serve     # http://127.0.0.1:4000
 bundle exec jekyll build     # writes _site/
 ```
 
+## Deployment
+
+`.github/workflows/pages.yml` builds the site with the Jekyll version pinned in
+`Gemfile.lock` and publishes it to GitHub Pages on every push to `master`. Pull
+requests run the same build (plus a broken-internal-link check) without
+deploying.
+
+This requires **Settings → Pages → Build and deployment → Source** to be set to
+**GitHub Actions**. With the older "Deploy from a branch" setting, GitHub builds
+the site itself with its own pinned Jekyll 3.10 and ignores this repo's Gemfile.
+
+The custom domain lives in the root `CNAME` file, which Jekyll copies into
+`_site/`; the workflow fails the build if it ever goes missing.
+
 ## Layout
 
 | Path | What it is |
