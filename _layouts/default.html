@@ -2,32 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }}</title>
+  <title>{{ page.title | default: site.title }}</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <meta content="" name="keywords">
-  <meta content="" name="description">
+  <meta content="{{ page.description | default: site.description | strip_newlines }}" name="description">
 
-  <!-- Favicons -->
-  <!--link href="" rel="icon">
-  <link href="img/apple-touch-icon.png" rel="apple-touch-icon"-->
-  <link rel="shortcut icon" href="#" />
+  <!-- Favicon: drop a favicon.ico (and/or apple-touch-icon.png) at the site root
+       and link it here. `href="#"` used to be here, which makes some browsers
+       re-request the page itself as the icon. -->
 
   <!-- Google Fonts -->
   <!--Original-->
   <!--link href="https://fonts.googleapis.com/css?family=Open+Sans:Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet"-->
   <!--Modified-->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700&display=swap" rel="stylesheet">
 
   
 
   <!-- Bootstrap CSS File -->
-  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{ '/lib/bootstrap/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
 
   <!-- Libraries CSS Files -->
-  <link href="lib/icomoon/icomoon.css" rel="stylesheet">
+  <link href="{{ '/lib/icomoon/icomoon.css' | relative_url }}" rel="stylesheet">
 
   <!-- Main Stylesheet File -->
-  <link href="css/style.css" rel="stylesheet">
+  <link href="{{ '/css/style.css' | relative_url }}" rel="stylesheet">
 
   <!-- =======================================================
     Template Name: Shield
@@ -90,13 +91,12 @@
   <!-- / copyrights -->
 
   <!-- JavaScript Libraries -->
-  <script src="lib/jquery/jquery.min.js"></script>
-  <script src="lib/bootstrap/js/bootstrap.min.js"></script>
-  <script src="lib/php-mail-form/validate.js"></script>
-  <script src="lib/easing/easing.min.js"></script>
+  <script src="{{ '/lib/jquery/jquery.min.js' | relative_url }}"></script>
+  <script src="{{ '/lib/bootstrap/js/bootstrap.min.js' | relative_url }}"></script>
+  <script src="{{ '/lib/easing/easing.min.js' | relative_url }}"></script>
 
   <!-- Template Main Javascript File -->
-  <script src="js/main.js"></script>
+  <script src="{{ '/js/main.js' | relative_url }}"></script>
 
   {% include analytics.html %}
 

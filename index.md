@@ -12,12 +12,12 @@ title: Jose Picado
   <!-- ==== ABOUT ==== -->
   <div class="container" id="about" name="about">
     <div class="row">
-      <div class="col-xs-12 col-xs-offset-1 col-sm-12 col-sm-offset-1 col-md-12 col-md-offset-1">
-        <div class=" col-xs-10 col-sm-10 col-md-10">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
           <h1 id="headerName">Jose Picado</h1>
           <h4>jpicado [AT] gmail [DOT] com</h4>
         </div>
-        <div class=" col-xs-10 col-sm-10 col-md-10">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
           <div>
             <br>
             <p>Hi, I'm Jose. I'm a software engineer at <a href="https://www.afterpay.com">Afterpay</a> &#128640;. My team builds systems to support machine learning use cases at Afterpay. This includes serving machine learning models in production, building data pipelines, building a feature store, etc. We also built the search engine in Afterpay's shop directory.</p>

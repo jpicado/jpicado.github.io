@@ -1,0 +1,91 @@
+name: Build and deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+  workflow_dispatch:
+
+# Allow the deploy job to publish to GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a running deploy finish; queue at most one more. Never cancel a deploy
+# in progress, or the live site can be left half-published.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+
+      # Only needed for the real deploy; on pull requests it is a no-op that
+      # still gives the build the right baseurl.
+      - name: Configure Pages
+        id: pages
+        uses: actions/configure-pages@v5
+        with:
+          # Best effort: switches the repo to "GitHub Actions" as the Pages
+          # source if it is not already. If it fails, set it by hand under
+          # Settings -> Pages -> Build and deployment -> Source.
+          enablement: true
+        continue-on-error: true
+
+      - name: Build with Jekyll
+        run: bundle exec jekyll build --trace
+        env:
+          JEKYLL_ENV: production
+
+      - name: Check for broken internal links
+        run: |
+          bundle exec ruby -e '
+            missing = []
+            Dir.glob("_site/**/*.html").each do |file|
+              html = File.read(file).gsub(/<!--.*?-->/m, "")
+              html.scan(/(?:href|src)="([^"#?:]+)"/).flatten.each do |link|
+                next if link.start_with?("//") || link.empty?
+                target = link.start_with?("/") ? File.join("_site", link) : File.join(File.dirname(file), link)
+                next if File.exist?(target) || File.exist?(File.join(target, "index.html"))
+                missing << "#{file}: #{link}"
+              end
+            end
+            if missing.any?
+              puts "Broken internal links:"
+              puts missing
+              exit 1
+            end
+            puts "No broken internal links."
+          '
+
+      - name: Check the custom domain survived the build
+        run: |
+          test -f _site/CNAME || { echo "_site/CNAME is missing; josepicado.com would break"; exit 1; }
+          echo "CNAME: $(cat _site/CNAME)"
+
+      - name: Upload Pages artifact
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
